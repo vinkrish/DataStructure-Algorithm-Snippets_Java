@@ -16,5 +16,6 @@ class Static {
     public static void main(String[] args) {
         BaseA b = new DerivedA();
         b.show();
+        DerivedA.show();
     }
 }
