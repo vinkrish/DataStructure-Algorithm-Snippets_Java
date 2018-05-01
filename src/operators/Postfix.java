@@ -6,10 +6,16 @@ public class Postfix {
 
 	public static void main(String[] args) {
 		String exp = "a+b*(c^d-e)^(f+g*h)-i";
-        System.out.println(infixToPostfix(exp));
+		String exp1 = "a+b*c+d"; //abc*+d+
+		String exp2 = "(a+b)*c+d"; //ab+c*d+
+		String exp3 = "(a+b)*(c+d)"; //ab+cd+*
+        System.out.println(infixToPostfix(exp3));
         
         String expression="231*+9-";
-        System.out.println(evaluatePostfix(expression));
+        String expression1 = "123*+4+";
+        String expression2 = "12+3*4+";
+        String expression3 = "12+34+*";
+        System.out.println(evaluatePostfix(expression3));
 	}
 	
 	// A utility function to return precedence of a given operator
