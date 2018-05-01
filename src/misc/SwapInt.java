@@ -1,4 +1,4 @@
-package challange;
+package misc;
 
 public class SwapInt {
 	public static void swap(Integer i, Integer j) {

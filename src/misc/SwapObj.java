@@ -1,4 +1,4 @@
-package challange;
+package misc;
 
 public class SwapObj {
 	public static void main(String[] args) {
