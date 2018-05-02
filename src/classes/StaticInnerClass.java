@@ -13,6 +13,9 @@ public class StaticInnerClass {
 	public static void main(String[] args) {
 		StaticInnerClass.Inner obj = new StaticInnerClass.Inner();
 		obj.msg();
+		
+		Inner in = new Inner();
+		in.msg();
 	}
 
 }
