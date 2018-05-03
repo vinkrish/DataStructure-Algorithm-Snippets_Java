@@ -17,4 +17,4 @@
  * [Searching](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/searching)
  * [Sorting](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/sorting)
  * [Synchronization](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/synchronization)
- * [Threading](#threading)
+ * [Threading](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/threading)
