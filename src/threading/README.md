@@ -78,7 +78,7 @@ Apart from the above three interfaces, The API also provides an Executors class 
 
 ### Thread Pool
 
-Most of the executor implementations use thread pools to execute tasks. A thread pool is nothing but a bunch of worker threads that exist separately from the Runnable or Callable tasks and is managed by the executor.
+Most of the executor implementations use thread pools to execute tasks. A thread pool is nothing but a bunch of worker threads that exist separately from the `Runnable or Callable` tasks and is managed by the executor.
 
 Creating a thread is an expensive operation and it should be minimized. Having worker threads minimizes the overhead due to thread creation because executor service has to create the thread pool only once and then it can reuse the threads for executing any task.
 
@@ -88,4 +88,28 @@ Tasks are submitted to a thread pool via an internal queue called the **Blocking
 
 **What if you want to return a result from your tasks?**
 
-Well, Java provides a Callable interface to define tasks that return a result. A Callable is similar to Runnable except that it can return a result and throw a checked exception.
+Well, Java provides a `Callable` interface to define tasks that return a result. A Callable is similar to `Runnable` except that it can return a result and throw a checked exception.
+
+Note that with Callable, you don’t need to surround `Thread.sleep()` by a `try/catch` block, because unlike Runnable, a Callable can throw a checked exception.
+
+#### Executing Callable tasks using ExecutorService and obtaining the result using Future
+
+Just like `Runnable`, you can submit a `Callable` to an executor service for execution. But what about the Callable’s result? How do you access it?
+
+The `submit()` method of executor service submits the task for execution by a thread. However, it doesn’t know when the result of the submitted task will be available. Therefore, it returns a special type of value called a Future which can be used to fetch the result of the task when it is available.
+
+The concept of `Future` is similar to Promise in other languages like Javascript. It represents the result of a computation that will be completed at a later point of time in future.
+
+### invokeAll
+
+> Submit multiple tasks and wait for all of them to complete.
+
+You can execute multiple tasks by passing a collection of Callables to the `invokeAll()` method.
+
+The invokeAll() returns a list of Futures. Any call to future.get() will block until all the Futures are complete.
+
+### invokeAny
+
+> Submit multiple tasks and wait for any one of them to complete
+
+The `invokeAny()` method accepts a collection of Callables and returns the result of the fastest Callable. Note that, it does not return a Future.
