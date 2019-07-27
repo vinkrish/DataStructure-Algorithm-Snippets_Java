@@ -3,6 +3,8 @@ package threading;
 public class ThreadName extends Thread {
 
 	public static void main(String args[]) {
+		System.out.println(Thread.currentThread().getName());
+		
 		ThreadName t1 = new ThreadName();
 		ThreadName t2 = new ThreadName();
 

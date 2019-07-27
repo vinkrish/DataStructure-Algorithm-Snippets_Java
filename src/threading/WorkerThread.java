@@ -1,4 +1,5 @@
 package threading;
+import java.util.concurrent.TimeUnit;
 
 public class WorkerThread implements Runnable {
 	private String message;
@@ -10,16 +11,18 @@ public class WorkerThread implements Runnable {
 	public void run() {
 		System.out.println(Thread.currentThread().getName() + " (Start) message = " + message);
 		
-		processmessage();// call processmessage method that sleeps the thread for 2 seconds
+		processMessage();// call processMessage method that sleeps the thread for 2 seconds
 		
 		System.out.println(Thread.currentThread().getName() + " (End)");// prints thread name
 	}
 
-	private void processmessage() {
+	private void processMessage() {
 		try {
-			Thread.sleep(2000);
+			// Thread.sleep(2000);
+			TimeUnit.SECONDS.sleep(2);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
+			// throw new IllegalStateException(e);
 		}
 	}
 }
