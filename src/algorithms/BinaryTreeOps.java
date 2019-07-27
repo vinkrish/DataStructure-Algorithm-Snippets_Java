@@ -29,20 +29,6 @@ public class BinaryTreeOps extends BinaryTree {
         return root;
     }
  
-    // This method mainly calls InorderRec()
-    public void inorder()  {
-       inorderRec(root);
-    }
- 
-    // A utility function to do inorder traversal of BST
-    void inorderRec(Node root) {
-        if (root != null) {
-            inorderRec(root.left);
-            System.out.println(root.key);
-            inorderRec(root.right);
-        }
-    }
-
 	public static void main(String[] args) {
 		BinaryTreeOps tree = new BinaryTreeOps();
         tree.root = new Node(1);
@@ -86,7 +72,12 @@ public class BinaryTreeOps extends BinaryTree {
         treeInsert.insert(80);
  
         // print inorder traversal of the BST
-        treeInsert.inorder();
+        //treeInsert.inorder();
+        treeInsert.printPostorder();
+        System.out.println();
+        treeInsert.printInorder();
+        System.out.println();
+        treeInsert.printPreorder();
 	}
 	
 	// A utility function to search a given key in BST

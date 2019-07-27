@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="52" started-at="2018-06-04T14:40:02Z" finished-at="2018-06-04T14:40:02Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="52" started-at="2018-06-04T14:40:02Z" finished-at="2018-06-04T14:40:02Z">
+      <class name="regex.EmailValidatorTest">
+        <test-method status="PASS" signature="initData()[pri:0, instance:regex.EmailValidatorTest@58651fd0]" name="initData" is-config="true" duration-ms="12" started-at="2018-06-04T14:40:02Z" finished-at="2018-06-04T14:40:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initData -->
+        <test-method status="PASS" signature="ValidEmailTest([Ljava.lang.String;)[pri:0, instance:regex.EmailValidatorTest@58651fd0]" name="ValidEmailTest" duration-ms="10" started-at="2018-06-04T14:40:02Z" data-provider="ValidEmailProvider" finished-at="2018-06-04T14:40:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@5bc79255]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidEmailTest -->
+        <test-method status="PASS" signature="InValidEmailTest([Ljava.lang.String;)[pri:0, instance:regex.EmailValidatorTest@58651fd0]" name="InValidEmailTest" duration-ms="2" started-at="2018-06-04T14:40:02Z" data-provider="InvalidEmailProvider" depends-on-methods="regex.EmailValidatorTest.ValidEmailTest" finished-at="2018-06-04T14:40:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@6e0e048a]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InValidEmailTest -->
+      </class> <!-- regex.EmailValidatorTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

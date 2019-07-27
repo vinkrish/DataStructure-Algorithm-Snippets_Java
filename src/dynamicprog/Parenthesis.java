@@ -5,13 +5,14 @@ import java.util.Stack;
 public class Parenthesis {
 
 	public static void main(String[] args) {
-		//String exp = "((x+y))";
-		//String exp = "((a+b)+((c+d)))";
+		//String exp = "(x+y)";
+		String exp = "((a+b)+((c+d)))";
 		//String exp = "(((a+(b)))+(c+d))";
 		//String exp = "(((a+(b))+c+d))";
 		
 		//String exp = "((a+b)+(c+d))";
-		String exp = "((a+(b))+(c+d))";
+		//String exp = "((a+(b))+(c+d))";
+		//String exp = "(a+(b))+(c+d)";
 		
 		if(checkParenthesis(exp)) {
 			System.out.println("The expression has duplicate parenthesis");

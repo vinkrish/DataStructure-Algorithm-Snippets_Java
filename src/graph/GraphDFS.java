@@ -15,7 +15,7 @@ public class GraphDFS {
         V = v;
         adj = new LinkedList[v];
         for (int i=0; i<v; ++i)
-            adj[i] = new LinkedList();
+            adj[i] = new LinkedList<>();
     }
  
     //Function to add an edge into the graph
