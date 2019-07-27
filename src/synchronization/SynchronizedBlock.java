@@ -15,7 +15,8 @@ public class SynchronizedBlock {
 class TableB {
 
 	void printTable(int n) {
-		synchronized (this) {// synchronized block
+		// Acquire Lock
+		synchronized (this) { // synchronized block
 			for (int i = 1; i <= 5; i++) {
 				System.out.println(n * i);
 				try {
@@ -25,7 +26,8 @@ class TableB {
 				}
 			}
 		}
-	}// end of the method
+	}
+	// Release Lock
 }
 
 class MyThread1B extends Thread {
