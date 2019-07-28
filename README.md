@@ -5,6 +5,7 @@
  * [Algorithms](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/algorithms)
  * [Challenge](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/challange)
  * [Classes](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/classes)
+  * [CompletableFuture](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/completablfutures)
  * [Constructor](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/constructor)
  * [Data Structure](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/datastructure)
  * [Dynamic Programming](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/dynamicprog)
