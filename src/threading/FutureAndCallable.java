@@ -13,7 +13,7 @@ public class FutureAndCallable {
 
         Callable<String> callable = () -> {
             // Perform some computation
-            System.out.println("Entered Callable");
+        	System.out.println("Entered Callable - Inside : " + Thread.currentThread().getName());
             Thread.sleep(2000);
             return "Hello from Callable";
         };
