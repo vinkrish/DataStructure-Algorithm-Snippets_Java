@@ -15,13 +15,19 @@ public class ComparatorTest {
         for (Student stud: ar)
             System.out.println(stud);
  
-        Collections.sort(ar, new Sortbyroll());
+        // Collections.sort(ar, new Sortbyroll());
+        
+        // Sorting using lambda expression
+        Collections.sort(ar, (s1, s2) -> s1.rollno - s2.rollno);
  
         System.out.println("\nSorted by rollno");
         for (Student stud: ar)
             System.out.println(stud);
  
-        Collections.sort(ar, new Sortbyname());
+        // Collections.sort(ar, new Sortbyname());
+        
+        // Sorting using lambda expression
+        Collections.sort(ar, (s1, s2) -> s1.name.compareTo(s2.name));
  
         System.out.println("\nSorted by name");
         for (Student stud: ar)
@@ -35,19 +41,15 @@ public class ComparatorTest {
 	    String name, address;
 	 
 	    // Constructor
-	    public Student(int rollno, String name,
-	                               String address)
-	    {
+	    public Student(int rollno, String name, String address){
 	        this.rollno = rollno;
 	        this.name = name;
 	        this.address = address;
 	    }
 	 
 	    // Used to print student details in main()
-	    public String toString()
-	    {
-	        return this.rollno + " " + this.name +
-	                           " " + this.address;
+	    public String toString(){
+	        return this.rollno + " " + this.name + " " + this.address;
 	    }
 	}
 	 

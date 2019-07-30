@@ -12,14 +12,16 @@ public class ComparableTest {
 		al.add(new Student(106,"Ajay",27));  
 		al.add(new Student(105,"Jai",21));  
 
-		Collections.sort(al);  
-		for(Student st:al){  
+		// Collections.sort(al);
+		al.sort((s1, s2) -> s1.name.compareTo(s2.name));
+		
+		for(Student st:al){ 
 			System.out.println(st.rollno+" "+st.name+" "+st.age);  
 		} 
 
 	}
 
-	static 	class Student implements Comparable<Student>{  
+	static class Student implements Comparable<Student>{  
 		int rollno;  
 		String name;  
 		int age;  
