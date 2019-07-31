@@ -12,6 +12,7 @@
  * [Exception](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/exception)
  * [Graph](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/graph)
  * [Inheritance](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/inheritance)
+  * [Java 8](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/java8)
  * [List](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/list)
  * [Map](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/map)
  * [Miscellaneous](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/misc)
