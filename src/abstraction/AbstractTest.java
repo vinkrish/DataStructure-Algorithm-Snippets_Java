@@ -15,7 +15,7 @@ abstract class Bike {
 		System.out.println("bike is created");
 	}
 
-	abstract void run();
+	protected abstract void run();
 
 	void changeGear() {
 		System.out.println("gear changed");
@@ -23,7 +23,8 @@ abstract class Bike {
 }
 
 class Honda extends Bike {
-	void run() {
+	
+	public void run() {
 		System.out.println("running safely..");
 	}
 }
