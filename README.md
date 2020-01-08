@@ -38,8 +38,9 @@ Java is a general-purpose programming language that is class-based, object-orien
 **State** : (Instance variable).
 
 **Behavior** : (methods) where class' logic is stored or data gets manipulated.
-.
-.
+
+...
+
 **Inheritance** : allows code defined in one class to be reused in other classes.
 
 **Interfaces** : 100 % abstract superclass that defines the methods a subclass must support but not how they must be supported.
@@ -136,8 +137,8 @@ Nonaccess Member Modifiers:
 
 ## Variable Declarations:
 
-1.Primitives - char, boolean, byte, short, int, long, double, float.
-2.Reference variables - used to refer (or access) an object. they can be static, instance variables, method parameters or local variables.
+1. Primitives - char, boolean, byte, short, int, long, double, float.
+2. Reference variables - used to refer (or access) an object. they can be static, instance variables, method parameters or local variables.
 
 **Instance Variables** : are defined inside class but outside any method, and are only initialized when class is instantiated. they are the fields that belong to each unique object.
 
@@ -148,9 +149,9 @@ Nonaccess Member Modifiers:
 **Static variables and Methods** : will exist independently of any instances created for the class (exist before we make instance of a class). one copy of static member exist regardless of number of instances of that class. static blocks are called before constructor
 
 **Enums** : (java 5)> restrict a variable to have pre-defined value from an enumerated list. (items in the list are called enums). Enums can be declared as seperate class or class member but never within a method.
-.
-.
-.
+
+...
+
 Benefit of encapsulation - The ability to make changes in your implementation code without breaking the code of others who use your code.
 
 access methods - getters and setters(accessors and mutators).
@@ -179,11 +180,13 @@ Overridden Methods - based on object type.
 Polymorphism lets you use a abstract supertype reference to refer to one of its subtypes.
 
 Overloading Methods - based on reference type.
-.
-.
+
+...
+
 **Coupling and Cohesion** : good OO design calls for loose coupling and high cohesion.
-.
-.
+
+...
+
 A primitive literal is merely a source code representation of primitive data types(eg:integer, floating-point number, boolean or character).
 
 ## Assignment
