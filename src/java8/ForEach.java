@@ -22,17 +22,10 @@ public class ForEach {
 		}
 		
 		// java 8 way of forEach with lambda
-		Map<String, Integer> itemz = new HashMap<>();
-		itemz.put("A", 10);
-		itemz.put("B", 20);
-		itemz.put("C", 30);
-		itemz.put("D", 40);
-		itemz.put("E", 50);
-		itemz.put("F", 60);
 		
-		itemz.forEach((k,v)->System.out.println("Item : " + k + " Count : " + v));
+		items.forEach((k,v)->System.out.println("Item : " + k + " Count : " + v));
 		
-		itemz.forEach((k,v)->{
+		items.forEach((k,v)->{
 			System.out.println("Item : " + k + " Count : " + v);
 			if("E".equals(k)){
 				System.out.println("Hello E");
@@ -64,6 +57,10 @@ public class ForEach {
 		listItems.stream()
 			.filter(s->s.contains("B"))
 			.forEach(System.out::println);
+		
+		listItems.stream()
+		.filter(s->{ if((s.contains("B")) || s.contains("C")) return true; return false;})
+		.forEach(System.out::println);
 
 	}
 

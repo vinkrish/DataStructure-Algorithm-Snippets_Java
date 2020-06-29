@@ -1,11 +1,17 @@
+### Functional Interfaces
+
+- A functional interface has a single abstract method.
+- Functional interfaces included with Java runtime. eg: Runnable, Callable, Comparator, TimerTask
+- Prior to Java 8 it is known as Single Abstract Method (SAM) Types. 
+
 ### Method References
 
-Java provides a new feature called method reference in Java 8. Method reference is used to refer method of functional interface. It is compact and easy form of lambda expression. Each time when you are using lambda expression to just referring a method, you can replace your lambda expression with method reference.
+Method reference is used to refer method of functional interface. It is compact and easy form of lambda expression. Each time when you are using lambda expression to just referring a method, you can replace your lambda expression with method reference.
 
 #### Types of Method References
 
 - Reference to a static method
-- Reference to an instance method
+- Reference to an instance method of a particular object or arbitrary object
 - Reference to a constructor
 
 #### 1. Reference to a Static Method
@@ -44,6 +50,8 @@ Advantages of Java 8 Optional:
 - No more Boiler plate code
 
 ### Lambda Expressions
+
+Lambda expressions can only appear in places where they will be assigned to a variable whose type is a functional interface.
 
 One issue with anonymous classes is that if the implementation of your anonymous class is very simple, such as an interface that contains only one method, then the syntax of anonymous classes may seem unwieldy and unclear. In these cases, you're usually trying to pass functionality as an argument to another method, such as what action should be taken when someone clicks a button. Lambda expressions enable you to do this, to treat functionality as method argument, or code as data.
 

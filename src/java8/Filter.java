@@ -8,12 +8,14 @@ public class Filter {
 	public static void main(String[] args) {
 		List<Person> persons = Arrays.asList(
                 new Person("Vinay", 30),
-                new Person("Krishna", 20),
-                new Person("Angel", 21)
+                new Person("Krishna", 31),
+                new Person("Angel", 22),
+                new Person("Krishna", 1)
         );
 
+		// passing predicate to filter
         Person result1 = persons.stream()
-                .filter((p) -> "Krishna".equals(p.getName()) && 20 == p.getAge())
+                .filter((p) -> "Krishna".equals(p.getName()) && 31 == p.getAge())
                 .findAny()
                 .orElse(null);
 
@@ -22,7 +24,7 @@ public class Filter {
         //or like this
         Person result2 = persons.stream()
                 .filter(p -> {
-                    if ("Krishna".equals(p.getName()) && 20 == p.getAge()) {
+                    if ("Krishna".equals(p.getName()) && 31 == p.getAge()) {
                         return true;
                     }
                     return false;

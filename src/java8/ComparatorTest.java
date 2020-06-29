@@ -1,4 +1,4 @@
-package challange;
+package java8;
 
 import java.util.*;
 
@@ -17,7 +17,23 @@ public class ComparatorTest {
  
         // Collections.sort(ar, new Sortbyroll());
         
+        // Anonymous InnerClass
+        Collections.sort(ar, new Comparator<Student>() {
+    	    public int compare(Student a, Student b){
+    	        return a.rollno - b.rollno;
+    	    }
+    	});
+        
+        
         // Sorting using lambda expression
+        
+        Comparator<Student> comp = (s1, s2) -> {
+        	return s1.rollno - s2.rollno;
+        };
+        Collections.sort(ar, comp);
+        
+        // or
+        
         Collections.sort(ar, (s1, s2) -> s1.rollno - s2.rollno);
  
         System.out.println("\nSorted by rollno");

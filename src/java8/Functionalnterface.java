@@ -13,11 +13,20 @@ public class Functionalnterface {
 		Integer convertedStatic = converterStatic.convert("123");
 		System.out.println(convertedStatic);
 		
+		// An instance of a functional interface using a lambda expression
+		TestInterface tester = () -> System.out.println("Java SE 8 is working!");
+		tester.test();
+		
 	}
 	
 	@FunctionalInterface
 	interface Converter<F, T> {
 	    T convert(F from);
+	}
+	
+	@FunctionalInterface
+	public interface TestInterface {
+		public void test();
 	}
 
 }

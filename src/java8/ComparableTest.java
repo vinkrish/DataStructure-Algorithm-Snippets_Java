@@ -1,4 +1,4 @@
-package challange;
+package java8;
 
 import java.util.ArrayList;
 import java.util.Collections;
