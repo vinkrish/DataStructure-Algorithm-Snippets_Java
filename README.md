@@ -9,6 +9,7 @@
  * [CompletableFuture](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/completablfutures)
  * [Constructor](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/constructor)
  * [Data Structure](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/datastructure)
+ * [Design Pattern](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/designpattern)
  * [Dynamic Programming](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/dynamicprog)
  * [Exception](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/exception)
  * [Graph](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/graph)
@@ -146,7 +147,7 @@ Nonaccess Member Modifiers:
 
 **Final Variable** : cannot be reinitialized (primitives) or reference variable cannot be changed but data within the object can be modified.(no final object only final references).
 
-**Static variables and Methods** : will exist independently of any instances created for the class (exist before we make instance of a class). one copy of static member exist regardless of number of instances of that class. static blocks are called before constructor
+**Static variables and Methods** : will exist independently of any instances created for the class (exist before we make instance of a class). one copy of static member exist regardless of number of instances of that class. static blocks are called before constructor.
 
 **Enums** : (java 5)> restrict a variable to have pre-defined value from an enumerated list. (items in the list are called enums). Enums can be declared as seperate class or class member but never within a method.
 

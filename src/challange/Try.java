@@ -9,7 +9,7 @@ class A {
 class B extends A {
     public B() {
         System.out.print("B");
-        //super(); super alwasy runs first
+        //super(); super always runs first
     }
 }
 
