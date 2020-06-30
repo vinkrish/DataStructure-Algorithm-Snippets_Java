@@ -8,6 +8,12 @@ import java.util.Scanner;
 public class Test {
 	
 	static List<Integer> testCaseList = new ArrayList<>();
+	
+	public static class Box {
+		private int height;
+		private int length;
+		private int width;
+	}
 
 	public static void main(String[] args) {
 		/*
@@ -38,6 +44,32 @@ public class Test {
 		findAnswer();
 		
 		*/
+		
+		int x,y,z;
+		x=9;
+		y=10;
+		z=++x+y++;
+		
+		System.out.println(x);
+		System.out.println(y);
+		System.out.println(z);
+		
+		List<String> list1 = new ArrayList<>();
+		list1.add("hi");
+		
+		List<String> list2 = list1;
+		list2.add("hey");
+		
+		System.out.println(list1);
+		list1.clear();
+		System.out.println(list2);
+		
+		Box obj1 = new Box();
+		Box obj2 = new Box();
+		obj1.height = 1;
+		
+		obj2 = obj1;
+		System.out.println(obj2.height);
 		
 	}
 	
