@@ -1,4 +1,4 @@
-package challange;
+package classes;
 
 public class StaticTest {
 	
