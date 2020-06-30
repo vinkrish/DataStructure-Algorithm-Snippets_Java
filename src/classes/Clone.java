@@ -12,6 +12,7 @@ public class Clone {
         System.out.println("obj1.a = " + obj1.a);
         System.out.println("obj2.a = " + obj2.a);
         
+        // below is not a clone
         Box box1 = new Box();
 		Box box2 = new Box();
 		box1.height = 1;
