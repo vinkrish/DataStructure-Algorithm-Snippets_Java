@@ -9,11 +9,6 @@ public class Test {
 	
 	static List<Integer> testCaseList = new ArrayList<>();
 	
-	public static class Box {
-		private int height;
-		private int length;
-		private int width;
-	}
 
 	public static void main(String[] args) {
 		/*
@@ -64,12 +59,6 @@ public class Test {
 		list1.clear();
 		System.out.println(list2);
 		
-		Box obj1 = new Box();
-		Box obj2 = new Box();
-		obj1.height = 1;
-		
-		obj2 = obj1;
-		System.out.println(obj2.height);
 		
 	}
 	
