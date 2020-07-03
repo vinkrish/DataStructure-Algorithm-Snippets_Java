@@ -199,6 +199,25 @@ A primitive literal is merely a source code representation of primitive data typ
 
 ## Data Strucures
 
+Collections come in four basic flavors:
+
+- **Lists** : Lists of things (classes that implement List)
+- **Sets** : Unique things (classes that implement Set)
+- **Maps** : Things with a unique ID (classes that implement Map)
+- **Queues** : Things arranged by the order in which they are to be processed
+
+The core interfaces:
+
+![Interfaces](https://vinkrish-notes.s3-us-west-2.amazonaws.com/collection_interface.png)
+
+The core concrete implementation classes:
+
+![Classes](https://vinkrish-notes.s3-us-west-2.amazonaws.com/collection_class.png)
+
+The interface and class hierarchy for collections:
+
+![Collection](https://vinkrish-notes.s3-us-west-2.amazonaws.com/collection.png)
+
 Arrays
 - Arrays are objects in Java that store multiple variables of same type.
 - Arrays can store either primitives or object references.
