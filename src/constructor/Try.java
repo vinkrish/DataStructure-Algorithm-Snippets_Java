@@ -1,4 +1,4 @@
-package challange;
+package constructor;
 
 class A {
     public A() {

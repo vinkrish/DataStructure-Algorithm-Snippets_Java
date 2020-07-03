@@ -266,21 +266,16 @@ Priority Queue
 
 ## Comparable Interface:
 
-- used by Collections.sort() and java.util.Arrays.sort() method.
-- to implement comparable, a class must implement a compareTo().
-- A comparable object is capable of comparing itself with another object. 
-- The class itself must implements the java.lang.Comparable interface in order to be able to compare its instances.
+- A comparable object is capable of comparing itself with another object.
+- Comparable provides compareTo() method to sort elements.
+- Comparable affects the original class, i.e., the actual class is modified.
+- Used by Collections.sort() and java.util.Arrays.sort() method.
 
 ## Comparator Interface
 
-- A comparator object is capable of comparing two different objects. 
-- The class is not comparing its instances, but some other class’s instances. 
-- This comparator class must implement the java.util.Comparator interface.
-
-## Threads
-
-- An instance of class java.lang.Thread
-- A thread of execution - an individual prcess that has its own call stack
+- A comparator object is capable of comparing two different objects. It is not comparing its instances, but some other class's instances. 
+- Comparator provides compare() method to sort elements.
+- Comparator doesn't affect the original class, i.e., the actual class is not modified.
 
 ## Developlment
 
