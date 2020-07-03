@@ -52,7 +52,10 @@ public class OverrideEquals {
 	         return false;
 	      }
 
-	      // Rest of equals method here, i.e., check all class B instance variables for equality
+	      // Rest of equals method here, i.e., check all class A instance variables for equality
+	      A obj = (A) other;
+	      // obj.getMethod1() == this.getMethod1() && obj.getMethod2().equals(this.getMethod2());
+	      
 	      return true;
 	   }
 	}
