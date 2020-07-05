@@ -87,6 +87,17 @@ JavaBean Listener Naming Rules:
 
 ## Class Declarations and Modifiers:
 
+| Modifier | Class | Package | Subclass(same pkg) | Subclass(diff pkg) | World |
+| -------- | ------| ------- | ------------------ | ------------------ | ----- |
+| public | + | + | + | + | + |
+| protected | + | + | + | + | |
+| no modifier | + | + | + | | |
+| private | + | | | | |
+
++ : accessible
+
+blank: not accessible
+
 Modifiers:
  
 - Access modifiers(public, protected, private) 
