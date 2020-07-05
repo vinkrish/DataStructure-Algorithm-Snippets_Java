@@ -94,10 +94,6 @@ JavaBean Listener Naming Rules:
 | no modifier | + | + | + | | |
 | private | + | | | | |
 
-+ : accessible
-
-blank: not accessible
-
 Modifiers:
  
 - Access modifiers(public, protected, private) 
