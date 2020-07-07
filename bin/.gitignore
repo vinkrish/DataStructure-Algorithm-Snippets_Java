@@ -6,6 +6,8 @@
 /completablfutures/
 /constructor/
 /datastructure/
+/datetime/
+/designpattern/
 /dynamicprog/
 /exception/
 /generics/
@@ -19,6 +21,7 @@
 /operators/
 /polymorphism/
 /queue/
+/recursion/
 /reflection/
 /regex/
 /searching/
@@ -26,6 +29,3 @@
 /sorting/
 /synchronization/
 /threading/
-/recursion/
-/date/
-/datetime/
