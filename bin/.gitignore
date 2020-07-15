@@ -7,7 +7,6 @@
 /constructor/
 /datastructure/
 /datetime/
-/designpattern/
 /dynamicprog/
 /exception/
 /generics/
@@ -29,3 +28,4 @@
 /sorting/
 /synchronization/
 /threading/
+/designpattern/

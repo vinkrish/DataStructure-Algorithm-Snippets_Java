@@ -9,6 +9,9 @@ public class SubClassTest {
 		Subclass.staticFoo(); // sc.staticFoo() works too with warning
 		Super s = new Subclass();
 		s.foo();
+		if(s instanceof Subclass) {
+			((Subclass) s).bar();
+		}
 		// s.bar();
 		// s.staticFoo();
 	}
