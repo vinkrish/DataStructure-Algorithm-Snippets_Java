@@ -4,8 +4,6 @@
 - Structural
 - Behavioral
 
-<li></li>
-
 ### Creational Pattern
 
 |   | Concepts | Design | Example |
@@ -23,8 +21,7 @@
 | Adapter | <ul><li>Plug adaptor</li><li>Convert interface into another interface</li><li>Legacy</li><li>Translates requests</li><li>Client, Adapter, Adaptee</li></ul> | <ul><li>Client centric</li><li>Integrate new with old</li><li>Interface, but not required</li><li>Adaptee can be the implementation</li></ul> | <ul><li>Arrays -> Lists</li><li>Streams</li></ul> |
 | Decorator | <ul><li>Also called a wrapper</li><li>Add behavior without affecting others</li><li>More than just inheritance</li><li>Single Responsibility Principle</li><li>Compose behavior dynamically</li></ul> | <ul><li>Inheritance based</li><li>Utilizes composition and inheritance (is-a, has-a)</li><li>Alternative to subclassing</li><li>Constructor requires instance from hierarchy</li></ul> | <ul><li>InputStream</li><li>Collections#CheckedList</li><li>UI Component</li></ul> |
 | Facade | <ul><li>Make an API easier to use</li><li>Reduce dependencies on outside code</li><li>Simplify the interface or client usage</li><li>Usually a refactoring pattern</li></ul> | <ul><li>Class that utilizes composition</li><li>Shouldn’t have a need for inheritance</li><li>Typically encompasses full lifecycle</li></ul> | <ul><li>java.net.URL</li><li>javax.faces.context.FacesContext</li></ul> |
-| Bridge | <ul><li>Decouple Abstraction and implementation</li><li>Encapsulation, Composition, Inheritance</li><li>Changes in Abstraction won’t affect client</li><li>Details won’t be right</li></ul> | <ul><li>Interfaces and Abstract classes</li><li>Composition over Inheritance</li><li>Expect change from both sides</li><li>More than Composition</li><li>Abstraction, Implementor, Refined
-Abstraction, Concrete Implementor</li></ul> | <ul><li>Driver</li><li>JDBC</li></ul> |
+| Bridge | <ul><li>Decouple Abstraction and implementation</li><li>Encapsulation, Composition, Inheritance</li><li>Changes in Abstraction won’t affect client</li><li>Details won’t be right</li></ul> | <ul><li>Interfaces and Abstract classes</li><li>Composition over Inheritance</li><li>Expect change from both sides</li><li>More than Composition</li><li>Abstraction, Implementor, Refined Abstraction, Concrete Implementor</li></ul> | <ul><li>Driver</li><li>JDBC</li></ul> |
 | Composite | <ul><li>Components represent part or whole structure</li><li>Compose objects into tree structures</li><li>Individual object treated as a Composite</li><li>Same operations applied on individual and composites</li></ul> | <ul><li>Tree structured</li><li>Component</li><li>Leaf or Composite, same operations</li><li>Composite knows about child objects</li><li>Component, Leaf, Composite</li></ul> | <ul><li>RESTful service GETs</li><li>JSF widgets</li><li>java.AWT.Component</li></ul> |
 | Flyweight | <ul><li>More efficient use of memory</li><li>Large number of similar objects</li><li>Immutable</li><li>Most of the object states can be extrinsic</li></ul> | <ul><li>Pattern of patterns</li><li>Utilizes a Factory</li><li>Encompasses Creation and Structure</li><li>Client, Factory, Flyweight, ConcreteFlyweight</li></ul> | <ul><li>String</li><li>Integer#valueOf(int)</li><li>Boolean, Byte, Character, Short, Long</li></ul> |
 | Proxy | <ul><li>Interface by wrapping</li><li>Can add functionality</li><li>Security, Simplicity, Remote, Cost</li><li>Proxy called to access real object</li></ul> |  | <ul><li>java.lang.reflect.Proxy</li><li>java.rmi.*</li></ul> |
