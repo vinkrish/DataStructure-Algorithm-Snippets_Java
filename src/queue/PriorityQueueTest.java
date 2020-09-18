@@ -7,8 +7,7 @@ public class PriorityQueueTest {
 
 	public static void main(String[] args) {
 		// Creating empty priority queue
-        PriorityQueue<String> pQueue =
-                          new PriorityQueue<String>();
+        PriorityQueue<String> pQueue = new PriorityQueue<String>();
  
         // Adding items to the pQueue
         pQueue.add("C");

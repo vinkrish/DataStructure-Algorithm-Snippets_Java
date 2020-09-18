@@ -14,6 +14,10 @@ public class BinaryTree {
     {
         root = null;
     }
+    
+    public BinaryTree(Node node) {
+    	root = node;
+    }
  
     public static void main(String[] args)
     {

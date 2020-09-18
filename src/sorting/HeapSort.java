@@ -1,6 +1,8 @@
 package sorting;
 
-//Java program for implementation of Heap Sort
+/*
+ * https://www.geeksforgeeks.org/heap-sort/
+ */
 public class HeapSort
 {
  public void sort(int arr[])

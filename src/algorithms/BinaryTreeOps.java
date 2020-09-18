@@ -5,6 +5,14 @@ import datastructure.Node;
 
 public class BinaryTreeOps extends BinaryTree {
 	
+	public BinaryTreeOps() {
+    	
+    }
+	
+	public BinaryTreeOps(Node node) {
+    	super(node);
+    }
+	
 	// This method mainly calls insertRec()
     public void insert(int key) {
        root = insertRecursive(root, key);
@@ -38,22 +46,23 @@ public class BinaryTreeOps extends BinaryTree {
         tree.root.left.right = new Node(5);
         tree.root.left.left.left = new Node(8);
  
-        System.out.println("Preorder traversal of binary tree is ");
+        System.out.println("Preorder traversal of binary tree is :");
         tree.printPreorder();
  
-        System.out.println("\nInorder traversal of binary tree is ");
+        System.out.println("\nInorder traversal of binary tree is :");
         tree.printInorder();
  
-        System.out.println("\nPostorder traversal of binary tree is ");
+        System.out.println("\nPostorder traversal of binary tree is :");
         tree.printPostorder();
+        
+        System.out.println("\n");
         
         if(tree.isBalanced(tree.root))
             System.out.println("Tree is balanced");
         else
             System.out.println("Tree is not balanced");
         
-        Node n = search(tree.root.left, 2);
-        System.out.println(n);
+        System.out.println("\n");
         
         BinaryTreeOps treeInsert = new BinaryTreeOps();
         
@@ -67,9 +76,9 @@ public class BinaryTreeOps extends BinaryTree {
         treeInsert.insert(30);
         treeInsert.insert(20);
         treeInsert.insert(40);
-        treeInsert.insert(70);
-        treeInsert.insert(60);
         treeInsert.insert(80);
+        treeInsert.insert(70);
+        treeInsert.insert(60);        
  
         // print inorder traversal of the BST
         //treeInsert.inorder();
@@ -78,6 +87,14 @@ public class BinaryTreeOps extends BinaryTree {
         treeInsert.printInorder();
         System.out.println();
         treeInsert.printPreorder();
+        
+        System.out.println("\n");
+        Node n = search(treeInsert.root, 70);
+        System.out.println(n.key);
+        
+        System.out.println("\n");
+        BinaryTreeOps invertedTree = new BinaryTreeOps(invertTree(treeInsert.root));
+        invertedTree.printInorder();
 	}
 	
 	// A utility function to search a given key in BST
@@ -132,6 +149,20 @@ public class BinaryTreeOps extends BinaryTree {
         /* If tree is not empty then height = 1 + max of left
          height and right heights */
         return 1 + Math.max(height(node.left), height(node.right));
+    }
+    
+    public static Node invertTree(Node root) {
+        if(root == null) {
+            return null;
+        }
+        
+        Node right = invertTree(root.right);
+        Node left = invertTree(root.left);
+        
+        root.left = right;
+        root.right = left;
+        
+        return root;
     }
 
 }
