@@ -36,6 +36,49 @@ public class BinaryTreeOps extends BinaryTree {
         /* return the (unchanged) node pointer */
         return root;
     }
+	
+	/*
+	 One step right and then always left
+	*/
+	 public int successor(Node root) {
+	    root = root.right;
+	    while (root.left != null) root = root.left;
+	    return root.key;
+	 }
+
+	/*
+	 One step left and then always right
+	*/
+	public int predecessor(Node root) {
+	    root = root.left;
+	    while (root.right != null) root = root.right;
+	    return root.key;
+	}
+	
+	public Node deleteNode(Node root, int key) {
+	    if (root == null) return null;
+
+	    // delete from the right subtree
+	    if (key > root.key) root.right = deleteNode(root.right, key);
+	    // delete from the left subtree
+	    else if (key < root.key) root.left = deleteNode(root.left, key);
+	    // delete the current node
+	    else {
+	      // the node is a leaf
+	      if (root.left == null && root.right == null) root = null;
+	      // the node is not a leaf and has a right child
+	      else if (root.right != null) {
+		root.key = successor(root);
+		root.right = deleteNode(root.right, root.key);
+	      }
+	      // the node is not a leaf, has no right child, and has a left child    
+	      else {
+		root.val = predecessor(root);
+		root.left = deleteNode(root.left, root.val);
+	      }
+	    }
+	    return root;
+	}
  
 	public static void main(String[] args) {
 		BinaryTreeOps tree = new BinaryTreeOps();
