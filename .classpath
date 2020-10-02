@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Vinay/workspace/lombok-1.18.12.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

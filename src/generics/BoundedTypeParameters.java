@@ -19,10 +19,13 @@ public class BoundedTypeParameters<T> {
 
 	public static void main(String[] args) {
 		BoundedTypeParameters<Integer> integerBox = new BoundedTypeParameters<Integer>();
-        integerBox.set(Integer.valueOf(10));
-        
+        integerBox.set(Integer.valueOf("10"));
         integerBox.inspect(Integer.valueOf(10));
         
+        integerBox.set(10);
+        integerBox.inspect(10);
+        
+        // integerBox.set("10");
         // integerBox.inspect("some text"); // error: this is still String!
 	}
 	
