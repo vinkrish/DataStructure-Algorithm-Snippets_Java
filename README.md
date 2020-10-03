@@ -16,6 +16,7 @@
  * [Graph](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/graph)
  * [Inheritance](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/inheritance)
  * [Java 8](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/java8)
+ * [Lombok](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/lombokk)
  * [List](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/list)
  * [Map](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/map)
  * [Miscellaneous](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/misc)
@@ -309,3 +310,11 @@ Priority Queue
 javac [options] [source files]
 java p[options] class [args]
 ```
+
+## AOP
+
+- Join Point represents the effective execution of a method where the aspect will be applied.
+- Advice is the action taken by an aspect at the particular Join Point. eg: Before, After, AfterReturning, AfterThrowing.
+- Spring AOP may create chains of Advice for one single Join Point.
+- Pointcut is a predicate that matches Join Point.
+- An Advice is associated with a Pointcut expression and runs at any Join Point matching that Pointcut.
