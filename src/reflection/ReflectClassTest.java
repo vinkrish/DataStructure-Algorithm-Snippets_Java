@@ -2,7 +2,7 @@ package reflection;
 
 import java.lang.reflect.Method;
 
-public class PrivateMethodTest {
+public class ReflectClassTest {
 
 	public static void main(String[] args) throws Exception {
 		Class c = Class.forName("reflection.PrivateMethod");  

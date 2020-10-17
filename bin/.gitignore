@@ -1,3 +1,12 @@
+/abstraction/
+/algorithms/
+/challange/
+/classes/
+/codility/
+/completablfutures/
+/constructor/
+/datastructure/
+/datetime/
 /designpattern/
 /dynamicprog/
 /exception/
@@ -21,3 +30,4 @@
 /sorting/
 /synchronization/
 /threading/
+/annotations/
