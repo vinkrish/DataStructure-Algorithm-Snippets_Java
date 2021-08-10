@@ -9,7 +9,7 @@ public class Cards {
 	}
 	public static int solution(String A, String B) {
         int count = 0;
-        char arr[] = {'0','0','2','3','4','5','6','7','8','9','T','J','Q','K','A'};
+        char arr[] = {'0','1','2','3','4','5','6','7','8','9','T','J','Q','K','A'};
          HashMap<Character, Integer> hmap = 
                      new HashMap<Character, Integer>();
         int arrSize = arr.length;

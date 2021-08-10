@@ -8,12 +8,12 @@ public class RedeemPoint {
 	public boolean redeemPoint(String customerId, String amount) throws Exception {
 		try {
 			Double toRedeem = Double.valueOf(amount);
-			double currentPoints = myService.getPoints(customerId);
+//			double currentPoints = myService.getPoints(customerId);
+			double currentPoints = 0;
 			double newPoints = currentPoints - toRedeem;
 			if(newPoints >= 0) {
-				myService.save(customerId, newPoints);
-				log.info(&quot;Points redeemed for customer {}&quot;,customerId);
-				return true
+//				myService.save(customerId, newPoints);
+				return true;
 			}
 			return false;
 		} catch(NumberFormatException e) {
