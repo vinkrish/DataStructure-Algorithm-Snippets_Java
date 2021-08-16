@@ -1,4 +1,4 @@
-package misc;
+package classes;
 
 public class Clonable implements Cloneable
 {

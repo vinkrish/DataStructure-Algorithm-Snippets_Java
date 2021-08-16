@@ -1,33 +1,22 @@
-/abstraction/
-/algorithms/
-/challange/
-/classes/
-/codility/
-/completablfutures/
-/constructor/
-/datastructure/
-/datetime/
-/designpattern/
-/dynamicprog/
-/exception/
-/generics/
-/graph/
-/inheritance/
-/interviewing/
-/java8/
-/list/
-/lombokk/
-/map/
-/misc/
-/operators/
-/polymorphism/
-/queue/
-/recursion/
-/reflection/
-/regex/
-/searching/
-/set/
-/sorting/
-/synchronization/
-/threading/
-/annotations/
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+/target/
+
+.settings/*
