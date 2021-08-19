@@ -18,9 +18,11 @@
 *.tar.gz
 *.rar
 /target/
+*/target/*
 
 .classpath
 .project
 .settings/*
 bin/*
 *.DS_Store
+*/.settings/*
