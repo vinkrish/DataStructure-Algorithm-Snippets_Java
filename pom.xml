@@ -1,10 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>Skillinza</groupId>
+  <groupId>com.skillinza</groupId>
   <artifactId>Skillinza</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
   <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<maven.compiler.source>11</maven.compiler.source>
@@ -13,6 +13,7 @@
     <exec.mainClass>classes.Clonable</exec.mainClass>
     <skipTests>true</skipTests>
     <commons-lang3.version>3.11</commons-lang3.version>
+    <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
 </properties>
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
@@ -26,8 +27,9 @@
     </resources>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
+        <version>${maven-compiler-plugin.version}</version>
         <configuration>
           <release>11</release>
           <annotationProcessorPaths>
@@ -54,7 +56,7 @@
         <configuration>
             <mainClass>classes.Clonable</mainClass>
         </configuration>
-        </plugin>
+      </plugin>
     </plugins>
   </build>
   <dependencies>
@@ -97,4 +99,10 @@
         <scope>test</scope>
     </dependency>
 </dependencies>
+  <modules>
+  	<module>Client</module>
+  	<module>Model</module>
+  	<module>Service</module>
+  	<module>ServiceImpl</module>
+  </modules>
 </project>
