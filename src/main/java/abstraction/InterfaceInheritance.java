@@ -2,12 +2,6 @@ package abstraction;
 
 public class InterfaceInheritance implements Showable {
 
-	public static void main(String[] args) {
-		InterfaceInheritance obj = new InterfaceInheritance();
-		obj.print();
-		obj.show();
-	}
-
 	@Override
 	public void print() {
 		System.out.println("Hello");

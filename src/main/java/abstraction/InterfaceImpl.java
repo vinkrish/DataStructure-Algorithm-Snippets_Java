@@ -1,10 +1,13 @@
 package abstraction;
 
-public class InterfaceTest {
+public class InterfaceImpl {
 
-	public static void main(String[] args) {
+	public void createObj() {
 		Drawable d = new Circle(); 
 		d.draw();
+		
+		DrawableDummy dd = new Rectangle();
+		dd.draw();
 		
 		Rectangle r = new Rectangle();
 		r.draw();
