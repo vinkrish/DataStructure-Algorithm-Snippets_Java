@@ -5,8 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.io.IOException;
 
 import org.apache.commons.lang3.SerializationUtils;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
@@ -82,7 +82,7 @@ public class DeepCopyUnitTest {
     }
 
     @Test
-    @Ignore
+    @Disabled
     public void whenMakingCopies_thenShowHowLongEachMethodTakes() throws CloneNotSupportedException, IOException {
         int times = 1000000;
         Address address = new Address("3077 State Route 11", "Mooers Forks", "USA");
