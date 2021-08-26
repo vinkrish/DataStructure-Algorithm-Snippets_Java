@@ -33,6 +33,7 @@
  * [Sorting](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/sorting)
  * [Synchronization](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/synchronization)
  * [Threading](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/threading)
+ * [Java 9 Module Reference](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/java9_module)
  
 # Java
 
