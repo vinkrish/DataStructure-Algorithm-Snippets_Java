@@ -1,6 +1,7 @@
 package list;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ArrayListTest {
 
@@ -9,7 +10,7 @@ public class ArrayListTest {
         int n = 5;
  
         //declaring ArrayList with initial size n
-        ArrayList<Integer> arrli = new ArrayList<Integer>(n);
+        List<Integer> arrli = new ArrayList<>(n);
  
         // Appending the new element at the end of the list
         for (int i=1; i<=n; i++)
@@ -25,8 +26,9 @@ public class ArrayListTest {
         System.out.println(arrli);
  
         // Printing elements one by one
-        for (int i=0; i<arrli.size(); i++)
+        for (Integer i: arrli)
             System.out.print(arrli.get(i)+" ");
+        
 	}
 
 }
