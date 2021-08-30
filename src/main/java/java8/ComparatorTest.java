@@ -2,6 +2,10 @@ package java8;
 
 import java.util.*;
 
+/*
+ * Sometimes we want to compare objects that do not implement the Comparable interface, 
+ * or to compare objects using a different ordering from the one specified by that interface.
+ */
 public class ComparatorTest {
 
 	public static void main(String[] args) {

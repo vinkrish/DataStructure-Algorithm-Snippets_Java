@@ -234,8 +234,13 @@ The interface and class hierarchy for collections:
 Arrays
 - Arrays are objects in Java that store multiple variables of same type.
 - Arrays can store either primitives or object references.
+- Array subtyping is covariant, meaning that type S[] is considered to be a subtype of T[] whenever S is a subtype of T.
+- Arrays do not support contravariant subtyping.
 
 List
+- The subtyping relation for generics is invariant, meaning that type `List<S>` is not considered to be a subtype of `List<T>`.
+- Wildcards reintroduce covariant subtyping for generics, in that type `List<S>` is considered to be a subtype of `List<? extends T>` when S is a subtype of T.
+- Wildcards also introduce contravariant subtyping for generics, in that type `List<S>` is considered to be a subtype of `List<? super T>` when S is a supertype of T (as opposed to a subtype).
 - methods related to the index.
 - eg:get(int index), indexof(Object o), add(int index, Object obj)
 

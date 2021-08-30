@@ -5,6 +5,10 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+/*
+ * Wildcards reintroduce covariant subtyping for generics, 
+ * in that type List<S> is considered to be a subtype of List<? extends T> when S is a subtype of T.
+ */
 
 public class WildCard {
 
@@ -32,11 +36,15 @@ public class WildCard {
         System.out.println(nums);
         
 //        List<Integer> ints = nums; List<Number> is not a subtype of List<Integer>
+//        List<Number> nums = ints; List<Integer> is not a subtype of List<Number>        
         
         List<? extends Number> wildNums = ints; //List<Integer> is a subtype of List<? extends Number>
         System.out.println(wildNums);
         
-        /*
+        /* The following assignment violates the Get and Put Principle, 
+         * because you cannot put a value into a type declared with an extends wildcard
+         * 
+        wildNums.set(1, 3.14);
         wildNums.add(1);
         wildNums.add(1.1);
         
@@ -64,8 +72,8 @@ public class WildCard {
         System.out.println(sum(dbls));
         System.out.println(sum(nums));
         
-//        ints = Arrays.asList(1, 2); fails when passed to addCount, don't know why
-        ints = new ArrayList<Integer>();
+//        ints = Arrays.asList(1, 2); fails when passed to addCount because modifying is not supported for list returned here.
+        ints = new ArrayList<Integer>(Arrays.asList(1, 2));
         ints.add(0);
         addCount(ints, 3);
         System.out.println(ints);
@@ -86,6 +94,12 @@ public class WildCard {
         nums = new ArrayList<Number>();
         double sum = sumCount(nums,5);
         System.out.println(sum);
+        
+        /*
+        List<?> list = new ArrayList<Object>(); // ok
+        List<?> list = new List<Object>() // compile-time error
+        List<?> list = new ArrayList<?>() // compile-time error
+        */
 	}
 	
 	/*
@@ -107,6 +121,26 @@ public class WildCard {
 	public static double sumCount(Collection<Number> nums, int n) {
 		addCount(nums, n);
 		return sum(nums);
+	}
+	
+	/*
+	 * Wildcard capture
+	 */
+	
+	public static <T> void reverse(List<T> list) {
+		List<T> tmp = new ArrayList<T>(list);
+		for (int i = 0; i < list.size(); i++) {
+			list.set(i, tmp.get(list.size()-i-1));
+		}
+	}
+	
+	public static void reverseWildcard(List<?> list) { rev(list); }
+	
+	private static <T> void rev(List<T> list) {
+		List<T> tmp = new ArrayList<T>(list);
+		for (int i = 0; i < list.size(); i++) {
+			list.set(i, tmp.get(list.size()-i-1));
+		}
 	}
 
 }
