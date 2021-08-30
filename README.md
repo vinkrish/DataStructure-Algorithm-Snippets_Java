@@ -120,8 +120,10 @@ Non-access class modifiers - used in addition to access control. (below are vali
 - public_abstract, default_final
 - strictfp_final, public_strictfp, default_strictfp
 
-Final Classes - class can't be subclassed.
+Final Classes - class can't be subclassed.  
 Abstract Classes - can never be instantiated.
+
+Static members are shared across all instantiations of a class, static members are independent of any type parameters.
 
 ### Interface
 
