@@ -212,6 +212,52 @@ A primitive literal is merely a source code representation of primitive data typ
 - A variable referring to an object is just that - a reference variable.
 - A reference variable bit holder contains bits representing a way to get to the object.
 
+## Reification
+
+In computing, reification has come to mean an explicit representation of a type — that is, run-time type information.  
+In Java, arrays reify information about their component types, while generic types do not reify information about their type parameters (while the type of a
+parameterized type is reified without its type parameters).
+
+In Java, we say that a type is reifiable if the type is completely represented at run time — that is, if erasure does not remove any useful information. 
+
+To be precise, a type is reifiable if it is one of the following:
+
+- A primitive type (such as int)
+- A nonparameterized class or interface type (such as Number, String, or Runnable)
+- A parameterized type in which all type arguments are unbounded wildcards (such as `List<?>, ArrayList<?>, or Map<?, ?>`)
+-  A raw type (such as List, ArrayList, or Map)
+-  An array whose component type is reifiable (such as `int[], Number[], List<?>[], List[], or int[][]`)
+
+A type is not reifiable if it is one of the following:
+
+- A type variable (such as T)
+- A parameterized type with actual parameters (such as `List<Number>`, `ArrayList<String>`, or `Map<String, Integer>`)
+- A parameterized type with a bound (such as `List<? extends Number>` or `Comparable<? super String>`)
+
+So the type `List<? extends Object>` is not reifiable, even though it is equivalent to `List<?>`. Defining reifiable types in this way makes them easy to identify syntactically.
+
+## Generics
+
+**Principle of Indecent Exposure:** This principle guarantees that the component type at compile time will be a reifiable type.
+
+**Principle of Truth in Advertising:** This principle guarantees that the reified component type returned at run time must be a subtype of the reifiable component type declared at compile time.
+
+**The Get and Put Principle:**  
+- use an extends wildcard when you only get values out of a structure
+- use a super wildcard when you only put values into a structure
+- don’t use a wildcard when you both get and put.
+
+## Reflection
+
+Every type in Java, including primitive types and array types, has a class literal and a corresponding class token.
+
+generics for reflection: some of the types used for reflection are now generic types.  
+reflection for generics: reflection now returns information about generic types.
+
+Class represents information about the type of an object at run time. The method getClass() is defined on every object and returns a class token that represents the reified type information carried by that object at run-time.
+
+class always represents a reifiable type, there is no point in parameterizing the class Class with a type that is not reifiable. Hence, the two main methods for producing a class with a type parameter, namely the getClass method and class literals, are both designed to yield a reifiable type for the type parameter in all cases.
+
 ## Data Strucures
 
 Collections come in four basic flavors:

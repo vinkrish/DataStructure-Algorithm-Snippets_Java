@@ -1,5 +1,9 @@
 package annotations;
 
+/*
+ * http://tutorials.jenkov.com/java/annotations.html
+ * http://tutorials.jenkov.com/java-reflection/annotations.html
+ */
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 

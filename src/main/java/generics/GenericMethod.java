@@ -1,5 +1,6 @@
 package generics;
 
+import java.util.Collection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,5 +66,16 @@ class Temp {
 	 */
 	public static <T> void addAll(List<T> list, T... arr) {
 		for (T elt : arr) list.add(elt); 
+	}
+	
+	/*
+	 * Nonreifiable Casts An instance test against a type that is not reifiable is always an error. 
+	 * However, in some circumstances a cast to a type that is not reifiable is permitted.
+	 */
+	public static <T> List<T> asList(Collection<T> c) 
+			throws IllegalArgumentException {
+		if (c instanceof List<?>) {
+			return (List<T>)c;
+		} else throw new IllegalArgumentException("Argument not a list");
 	}
 }

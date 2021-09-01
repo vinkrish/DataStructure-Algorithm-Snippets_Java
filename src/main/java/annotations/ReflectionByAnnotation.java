@@ -1,17 +1,14 @@
-package reflection;
+package annotations;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import annotations.MyAnnotation;
-import annotations.MyClass;
-
 public class ReflectionByAnnotation {
 
 	public static void main(String[] args) throws Exception {
 		
-		//------------------Class Annotations-------------------
+		System.out.println("-------------------Class Annotations-------------------");
 		Class aClass = MyClass.class;
 		Annotation[] annotations = aClass.getAnnotations();
 		// Annotation annotation = aClass.getAnnotation(MyAnnotation.class);
@@ -24,7 +21,7 @@ public class ReflectionByAnnotation {
 		    }
 		}
 		
-		//-----------------Method Annotations---------------------
+		System.out.println("-------------------Method Annotations------------------");
 		Method method = aClass.getMethod("doSomething", null);
 		Annotation[] methodAnnotations = method.getDeclaredAnnotations();
 		// Annotation methodAnnotation = method.getAnnotation(MyAnnotation.class);
@@ -37,7 +34,7 @@ public class ReflectionByAnnotation {
 		    }
 		}
 		
-		//------------------Parameter Annotations-------------------
+		System.out.println("-----------------Parameter Annotations-----------------");
 		Method methodElse = aClass.getMethod("doSomethingElse", String.class);
 		Annotation[][] parameterAnnotations = methodElse.getParameterAnnotations();
 		Class[] parameterTypes = methodElse.getParameterTypes();
@@ -56,7 +53,7 @@ public class ReflectionByAnnotation {
 		  }
 		}
 		
-		//------------------Field Annotations------------------
+		System.out.println("-------------------Field Annotations-------------------");
 		Field field = aClass.getField("myField");
 		Annotation[] fieldAnnotations = field.getDeclaredAnnotations();
 		// Annotation fieldAnnotation = field.getAnnotation(MyAnnotation.class);
