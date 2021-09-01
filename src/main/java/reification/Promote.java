@@ -1,7 +1,7 @@
 package reification;
 
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
 
 /*
  * It is illegal to cast a list of objects to a list of strings, so the cast must take place in two steps. 
