@@ -236,11 +236,15 @@ A type is not reifiable if it is one of the following:
 
 So the type `List<? extends Object>` is not reifiable, even though it is equivalent to `List<?>`. Defining reifiable types in this way makes them easy to identify syntactically.
 
-## Generics
-
 **Principle of Indecent Exposure:** This principle guarantees that the component type at compile time will be a reifiable type.
 
-**Principle of Truth in Advertising:** This principle guarantees that the reified component type returned at run time must be a subtype of the reifiable component type declared at compile time.
+**Principle of Truth in Advertising:** This principle guarantees that the reified component type returned at run time must be a subtype of the reifiable component type declared at compile time. 
+
+Converse to cast-iron guarantee, above principle illustrates if there are unchecked warnings, then casts inserted by erasure may fail.
+
+## Generics
+
+**cast-iron guarantee:** No cast inserted by erasure will fail, so long as there are no unchecked warnings.
 
 **The Get and Put Principle:**  
 - use an extends wildcard when you only get values out of a structure
