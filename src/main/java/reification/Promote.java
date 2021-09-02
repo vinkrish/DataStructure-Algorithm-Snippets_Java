@@ -20,8 +20,8 @@ public class Promote {
 	@SuppressWarnings("unchecked")
 	public static List<String> promote(List<Object> objs) {
 		for (Object o : objs)
-		if (!(o instanceof String))
-		throw new ClassCastException();
+			if (!(o instanceof String))
+				throw new ClassCastException();
 		return (List<String>)(List<?>)objs; // unchecked cast
 	}
 	
