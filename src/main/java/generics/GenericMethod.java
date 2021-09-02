@@ -2,6 +2,7 @@ package generics;
 
 import java.util.Collection;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GenericMethod {
@@ -14,6 +15,7 @@ public class GenericMethod {
 		List<String> words = Temp.toList(new String[] { "hello", "world" });
 		System.out.println(words);
 		
+		System.out.println();
 		// the type parameter to the generic method is inferred, but it may also be given explicitly
 		List<Object> objs = Temp.<Object>toListVararg(1, "two");
 		System.out.println(objs);
@@ -31,11 +33,34 @@ public class GenericMethod {
 		List<String> wordss = Temp.toListVararg("hello", "world");
 		System.out.println(wordss);
 		
+		System.out.println();
 		List<Integer> intsAll = new ArrayList<Integer>(); 
 		Temp.addAll(intsAll, 1, 2);
 		Temp.addAll(intsAll, new Integer[] { 3, 4 });
 		System.out.println(intsAll);
-
+		
+		System.out.println();
+		List<Integer> a = Temp.toListVararg(1, 2, 3);
+//		List<Integer> b = Temp.toListVararg(4, 5, 6);
+		List b = Arrays.asList("4", "5", "6");
+		List<List<Integer>> x = Temp.toListVararg(a, b); // generic array creation
+		System.out.println(x);
+		
+		/*
+		 * Recall that an argument list of variable length is implemented by packing the arguments into an array and passing that. 
+		 * Hence these three calls are equivalent to the following: 
+		 * 
+		 * since List<Integer> is not a reifiable type, you get warning of an unchecked generic array creation at compile time.
+		 * 
+		 * The convenience offered by varargs is outweighed by the danger inherent in unchecked warnings, 
+		 * and we recommend that you never use varargs when the argument is of a nonreifiable type.
+		 * 
+		 * Normally, generic array creation reports an error. 
+		 * As a workaround, one can create the array at a reifiable type and perform an unchecked cast.
+		 */
+		
+//		List<List<Integer>> y = Temp.toListVararg(new List<Integer>[] { a, b }); // generic array creation
+		
 	}
 
 }
@@ -52,7 +77,7 @@ class Temp {
 	}
 	
 	/*
-	 * At run time, the arguments are packed into an array which is passed to the method, just as previously
+	 * At run time, the arguments are packed into an array which is passed to the method, just as previously.
 	 */
 	public static <T> List<T> toListVararg(T... arr) {
 		List<T> list = new ArrayList<T>(); 
@@ -78,4 +103,5 @@ class Temp {
 			return (List<T>)c;
 		} else throw new IllegalArgumentException("Argument not a list");
 	}
+
 }
