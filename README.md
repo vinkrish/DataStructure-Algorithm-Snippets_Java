@@ -27,6 +27,7 @@
  * [Recursion](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/recursion)
  * [Reflection](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/reflection)
  * [Regex - Email](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/regex/email)
+ * [Reification](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/reification)
  * [Searching](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/searching)
  * [Set](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/set)
  * [Shallow Copy](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/shallowcopy)
@@ -243,6 +244,11 @@ So the type `List<? extends Object>` is not reifiable, even though it is equival
 Converse to cast-iron guarantee, above principle illustrates if there are unchecked warnings, then casts inserted by erasure may fail.
 
 ## Generics
+
+In Java 5, the class Class has been made generic, and now has the form `Class<T>`. 
+
+What does the T stand for?  
+An instance of type `Class<T>` represents the type T. For example, `String.class` has type `Class<String>`.
 
 **cast-iron guarantee:** No cast inserted by erasure will fail, so long as there are no unchecked warnings.
 
