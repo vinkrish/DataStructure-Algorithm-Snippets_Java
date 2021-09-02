@@ -239,6 +239,8 @@ So the type `List<? extends Object>` is not reifiable, even though it is equival
 
 **Principle of Indecent Exposure:** This principle guarantees that the component type at compile time will be a reifiable type.
 
+Based on above principle, never publicly expose an array where the components do not have a reifiable type.
+
 **Principle of Truth in Advertising:** This principle guarantees that the reified component type returned at run time must be a subtype of the reifiable component type declared at compile time. 
 
 Converse to cast-iron guarantee, above principle illustrates if there are unchecked warnings, then casts inserted by erasure may fail.
@@ -256,6 +258,9 @@ An instance of type `Class<T>` represents the type T. For example, `String.class
 - use an extends wildcard when you only get values out of a structure
 - use a super wildcard when you only put values into a structure
 - don’t use a wildcard when you both get and put.
+
+Why can't you create generic array type?  
+Java's arrays (unlike generics) contain, at runtime, information about its component type. So you must know the component type when you create the array.
 
 ## Reflection
 
