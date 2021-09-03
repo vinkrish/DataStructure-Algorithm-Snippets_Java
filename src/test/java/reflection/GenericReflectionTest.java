@@ -13,7 +13,7 @@ public class GenericReflectionTest {
 	 * Class tokens and the getClass method are treated specially by the compiler. 
 	 * In general, if T is a type without type parameters, then T.class has type Class<T>, 
 	 * and if e is an expression of type T then e.getClass() has type Class<? extends T>. 
-	 * (We’ll see what happens when T does have type parameters in the next section.) 
+	 * 
 	 * The wildcard is needed because the type of the object referred to by the variable may be a subtype of the type of the variable, 
 	 * as in this case, where a variable of type Number contains an object of type Integer.
 	 */
@@ -37,11 +37,18 @@ public class GenericReflectionTest {
 		List<Integer> ints = new ArrayList<Integer>();
 		List<String> strs = new ArrayList<String>();
 		assertThat(ints.getClass()).isEqualTo(strs.getClass());
+		assertThat(ints.getClass()).isEqualTo(ArrayList.class);
 	}
 	
 	/*
 	 * In general, if expression e has type T, then the expression e.getClass() has type Class<? extends |T|>, 
 	 * where |T| is the erasure of the type T.
+	 * 
+	 * Here the expression ints has type List<Integer>, 
+	 * so the expression ints.getClass() has type Class<? extends List>; 
+	 * this is the case because erasing List<Integer> yields the raw type List. 
+	 * The actual value of k is ArrayList.class, which has type Class<ArrayList>,
+	 * which is indeed a subtype of Class<? extends List>.
 	 */
 	@Test
 	public void getClassIsSpecial() {

@@ -6,7 +6,10 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class GenericReflection {
+/*
+ * Reflection is the term for a set of features that allows a program to examine its own definition.
+ */
+public class ReflectClassMain {
 
 	public static void main(String[] args) throws Exception {
 		Class myClass = ReflectClass.class;

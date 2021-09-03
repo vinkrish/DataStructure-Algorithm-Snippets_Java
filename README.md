@@ -273,6 +273,8 @@ Class represents information about the type of an object at run time. The method
 
 class always represents a reifiable type, there is no point in parameterizing the class Class with a type that is not reifiable. Hence, the two main methods for producing a class with a type parameter, namely the getClass method and class literals, are both designed to yield a reifiable type for the type parameter in all cases.
 
+Each class token corresponds to a reifiable type. If you try to reflect a parameterized type, you get the reified information for the corresponding raw type.
+
 ## Data Strucures
 
 Collections come in four basic flavors:

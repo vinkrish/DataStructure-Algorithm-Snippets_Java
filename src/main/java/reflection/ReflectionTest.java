@@ -5,6 +5,27 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
+/*
+ * generics for reflection => some of the types used for reflection are now generic types.
+ * reflection for generics => reflection now returns information about generic types.
+ * 
+ * Class represents information about the type of an object at run time.
+ * The method getClass() is defined on every object 
+ * and returns a class token that represents the reified type information carried by that object at run-time.
+ * 
+ * class always represents a reifiable type, 
+ * there is no point in parameterizing the class Class with a type that is not reifiable. 
+ * Hence, the two main methods for producing a class with a type parameter, 
+ * namely the getClass method and class literals, are both designed to yield a reifiable type for the type parameter in all cases.
+ * 
+ * 
+  class ClassLiteral {
+	public Class<?> k = List<Integer>.class; // syntax error
+  }
+ * This syntax problem leads to an irregularity. Everywhere else that a reifiable type is required.
+ * You may supply either a raw type (such as List) or a parameterized type with unbounded wildcards (such as List<?>). 
+ * However, for class tokens, you must supply a raw type; not even unbounded wildcards may appear.
+ */
 public class ReflectionTest {
 
 	public static void main(String[] args) throws Exception {
@@ -13,22 +34,24 @@ public class ReflectionTest {
 		System.out.println("class name without package name: " + c.getSimpleName());
 		
 		Package pkg = c.getPackage();
-		System.out.println("package name:" + pkg.getName());
+		System.out.println("\npackage name:" + pkg.getName());
 		
 		Class superclass = c.getSuperclass();
-		System.out.println("super class: " + superclass.getName());
+		System.out.println("\nsuper class: " + superclass.getName());
 		
+		System.out.println();
 		Class[] interfaces = c.getInterfaces();
 		for(Class interfac: interfaces) {
 			System.out.println("interface: " + interfac.getName());
 		}
 		
 		int modifiers = c.getModifiers();
-		System.out.println("is class Private:" + Modifier.isPrivate(modifiers));
+		System.out.println("\nis class Private:" + Modifier.isPrivate(modifiers));
 		System.out.println("is class Public:" + Modifier.isPublic(modifiers));
 		
 		// --------------------------------Constructors------------------------------------
 		
+		System.out.println();
 		Constructor[] constructors = c.getConstructors();
 		for(Constructor con: constructors) {
 			System.out.println("constructor: " + con.getParameterCount());
@@ -36,8 +59,9 @@ public class ReflectionTest {
 		
 		// Constructor constructor = c.getConstructor(new Class[]{String.class});
 		Constructor constructor = c.getConstructor(String.class);
-		System.out.println("constructor that accepts String: " + constructor.getParameterCount());
+		System.out.println("\nconstructor that accepts String: " + constructor.getParameterCount());
 		
+		System.out.println();
 		Class[] parameterTypes = constructor.getParameterTypes();
 		for(Class parameterType: parameterTypes) {
 			System.out.println("parameterType: " + parameterType.getName());
@@ -45,17 +69,12 @@ public class ReflectionTest {
 		
 		// Instantiating Objects using Constructor Object
 		ReflectClass p = (ReflectClass)constructor.newInstance("constructor-arg1");
-
-		ReflectionTest i = new ReflectionTest();
-		i.printName(p);
 		
 		Class clas = boolean.class;
-		System.out.println("class name: " + clas.getName());
-
-		Class classs = ReflectionTest.class;
-		System.out.println("class name: " + classs.getName());
+		System.out.println("\nclass name: " + clas.getName());
 		
 		// --------------------------------Fields------------------------------------
+		System.out.println();
 		Field[] fields = c.getFields();
 		for(Field f: fields) {
 			System.out.println(f.getName());
@@ -63,20 +82,22 @@ public class ReflectionTest {
 		
 		Field field = c.getField("publicMsg");
 		String fieldName = field.getName();
-		System.out.println("fieldName: " + fieldName);
+		System.out.println("\nfieldName: " + fieldName);
 		
 		Object fieldType = field.getType();
-		System.out.println("fieldType: " + fieldType.toString());
+		System.out.println("\nfieldType: " + fieldType.toString());
 		
 		field.set(p, "Hello Reflection!");
 		System.out.println(p.getPublicMsg());
 		
 		// --------------------------------Methods------------------------------------
+		System.out.println();
 		Method[] methods = c.getMethods();
 		for(Method m: methods) {
 			System.out.println(m.getName());
 		}
 		
+		System.out.println();
 		// public method which takes String as parameter
 		Method method = c.getMethod("setPublicMsg", new Class[]{String.class});
 		// Method method = c.getMethod("getPublicMsg", String.class); 
@@ -85,6 +106,7 @@ public class ReflectionTest {
 		// method that takes no argument
 		Method noArgumentMethod = c.getMethod("printPrivateMsg", null);
 		
+		System.out.println();
 		Class[] pTypes = method.getParameterTypes();
 		for(Class parameterType: pTypes) {
 			System.out.println("parameterType: " + parameterType.getName());
@@ -95,12 +117,14 @@ public class ReflectionTest {
 		Object returnValue = method.invoke(p, "parameter-value 1");
 		System.out.println(p.getPublicMsg());
 		
+		System.out.println();
 		for(Method m : methods){
 		    if(isGetter(m)) System.out.println("getter: " + m);
 		    if(isSetter(m)) System.out.println("setter: " + m);
 		 }
 		
 		// --------------------------Private Fields and Methods--------------------------------
+		System.out.println();
 		Field privateField = c.getDeclaredField("msg");
 		
 		// turn off the access checks for this particular Field instance, for reflection only
