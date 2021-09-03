@@ -56,5 +56,29 @@ public class GenericReflectionTest {
 		Class<? extends List> k = ints.getClass();
 		assertThat(k).isEqualTo(ArrayList.class);
 	}
+	
+	/*
+	 * Every type in Java, including primitive types and array types, has a class literal and a corresponding class token.
+	 */
+	@Test
+	public void reflectionOnPrimitives() {
+		int i = 0;
+		Class c = ((Object)i).getClass(); // you are actually creating a new Integer instance with the same value.
+		System.out.println(c);
+		assertThat(int.class).isEqualTo(Integer.TYPE); // since int is not a reference type, so it is taken to be Class<Integer>.
+	}
+	
+	/*
+	 * you might expect the call java.lang.reflect.Array.newInstance(int.class,size) to return a value of type Integer[], 
+	 * but in fact the call returns a value of type int[]. 
+	 * These examples suggest that it might have made more sense to give the class token int.class the type Class<?>.
+	 */
+	
+	@Test
+	public void reflectionOnArray() {
+		Class<int[]> intsClass = int[].class; // permitted since int[] is a reference type.
+		int[] ints = {1,2,3};
+ 		assertThat(intsClass).isEqualTo(ints.getClass());
+	}
 
 }

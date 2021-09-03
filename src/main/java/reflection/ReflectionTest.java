@@ -25,6 +25,11 @@ import java.lang.reflect.Modifier;
  * This syntax problem leads to an irregularity. Everywhere else that a reifiable type is required.
  * You may supply either a raw type (such as List) or a parameterized type with unbounded wildcards (such as List<?>). 
  * However, for class tokens, you must supply a raw type; not even unbounded wildcards may appear.
+ * 
+ * The only time I need to explicitly work with int.class and Integer.class is to build a generics api 
+ * <T> T getValue(String name, Class<T> type); where I need to differentiate if the api is allowed to return null:
+ * int value = getValue("key", Integer.class); // will potentially throw NPE
+ * int value = getValue("key", int.class); // will never throw NPE
  */
 public class ReflectionTest {
 
