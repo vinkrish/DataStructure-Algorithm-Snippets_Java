@@ -56,5 +56,9 @@ public class ReflectionForGenerics {
 		Class<?> k = Cell.class;
 		toString(k);
 		toGenericString(k);
+		
+		Class<?> clas = java.util.AbstractList.class;
+		toString(clas);
+		toGenericString(clas);
 	}
 }
