@@ -1,4 +1,4 @@
-package challange;
+package commontests;
 
 import java.util.Scanner;
 

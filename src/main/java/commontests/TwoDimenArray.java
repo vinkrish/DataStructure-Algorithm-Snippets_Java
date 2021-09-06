@@ -1,4 +1,4 @@
-package challange;
+package commontests;
 
 public class TwoDimenArray {
 	public static void main(String args[]) {

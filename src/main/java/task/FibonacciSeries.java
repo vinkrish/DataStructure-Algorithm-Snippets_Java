@@ -1,4 +1,4 @@
-package challange;
+package task;
 
 public class FibonacciSeries {
 

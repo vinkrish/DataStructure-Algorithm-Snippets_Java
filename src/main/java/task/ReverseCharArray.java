@@ -1,4 +1,4 @@
-package interviewing;
+package task;
 
 import java.util.ArrayList;
 import java.util.Arrays;

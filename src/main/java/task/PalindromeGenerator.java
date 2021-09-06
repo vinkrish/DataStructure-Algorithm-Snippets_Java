@@ -1,4 +1,4 @@
-package challange;
+package task;
 
 class PalindromeGenerator {
 	

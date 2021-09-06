@@ -1,4 +1,4 @@
-package challange;
+package commontests;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;

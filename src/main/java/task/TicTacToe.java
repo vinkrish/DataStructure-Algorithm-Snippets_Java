@@ -1,4 +1,4 @@
-package challange;
+package task;
 
 import java.util.Arrays;
 import java.util.InputMismatchException;
