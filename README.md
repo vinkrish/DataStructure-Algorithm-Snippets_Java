@@ -11,6 +11,7 @@
  * [Data Structure](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/datastructure)
  * [Data Time](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/datetime)
  * [Deep Copy](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/deepcopy)
+ * [Design](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/design)
  * [Design Pattern](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/designpattern)
  * [Dynamic Programming](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/dynamicprog)
  * [Exception](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/exception)
