@@ -388,6 +388,26 @@ javac [options] [source files]
 java p[options] class [args]
 ```
 
+## Maven 
+
+Tool used for building and managing any Java-based project.
+
+### groupId
+
+It identify your project uniquely across all projects, It has to follow the package name rules.
+
+eg: org.apache.maven
+
+A good way to determine the granularity of the groupId is to use the project structure. That is, if the current project is a multiple module project, it should append a new identifier to the parent's groupId.
+
+eg: org.apache.maven.plugins
+
+### artifactId
+
+It is the name of the jar without version.
+
+eg: maven
+
 ## AOP
 
 - Join Point represents the effective execution of a method where the aspect will be applied.
