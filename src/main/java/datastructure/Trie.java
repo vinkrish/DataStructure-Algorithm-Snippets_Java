@@ -58,16 +58,11 @@ public class Trie {
 		int index;
 		TrieNode pCrawl = root;
 	
-		for (level = 0; level < length; level++)
-		{
+		for (level = 0; level < length; level++) {
 			index = key.charAt(level) - 'a';
-	
-			if (pCrawl.children[index] == null)
-				return false;
-	
 			pCrawl = pCrawl.children[index];
+			if (pCrawl == null)  return false;
 		}
-	
 		return (pCrawl.isEndOfWord);
 	}
 	
