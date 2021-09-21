@@ -2,11 +2,11 @@ package design;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-/*
+/* Design a search autocomplete system for a search engine. Users may input a sentence (at least one word and end with a special character '#').
+ * 
  * You are given a string array sentences and an integer array times both of length n 
  * where sentences[i] is a previously typed sentence and times[i] is the corresponding number of times the sentence was typed. 
  * For each input character return the top 3 historical hot sentences that have the same prefix as the part of the sentence already typed.
@@ -27,21 +27,19 @@ public class AutocompleteLinear {
 			searchLoop(obj, input);
 		}
 		input.close();
-
 	}
 	
 	public static void searchLoop(AutocompleteLinear obj, Scanner input) {
-		System.out.println("Enter number of letters you will be using to search:");
-		
-		int inputCharCount = input.nextInt();
-		input.nextLine();
-		
+		System.out.println("Enter the search characters:");
+
 		List<String> results = new ArrayList<>();
-		for(int i=0; i<inputCharCount; i++) {
+		do {
 			System.out.println();
-			results = obj.input(input.nextLine().charAt(0));
+			char searchChar = input.nextLine().charAt(0);
+			if (searchChar == '#') break;
+			results = obj.input(searchChar);
 			for(String result: results) System.out.println(result);
-		}
+		} while(true);
 		if (results.size() == 0) obj.appendNewAutocomplete(obj.getNewAutocomplete(obj.searchQuery.toString()));
 		obj.searchQuery = new StringBuilder();
 	}
@@ -59,7 +57,7 @@ public class AutocompleteLinear {
     
     public List<String> input(char c) {
     	searchQuery = searchQuery.append(c);
-    	List<Autocomplete> searchResults = new LinkedList<>();
+    	List<Autocomplete> searchResults = new ArrayList<>();
     	for(int i=0; i<this.autocompleteList.size(); i++) {
     		if (autocompleteList.get(i).getSentence().startsWith(searchQuery.toString())) {
     			searchResults.add(autocompleteList.get(i));
@@ -85,40 +83,40 @@ public class AutocompleteLinear {
     	this.autocompleteList.add(autocomplete);
     }
 
-}
+    class Autocomplete implements Comparable<Autocomplete> {
 
-class Autocomplete implements Comparable<Autocomplete> {
+    	Integer weight = 0;
+    	String sentence = "";
+    	
+    	public Autocomplete(Integer weight, String sentence) {
+    		this.weight = weight;
+    		this.sentence = sentence;
+    	}
+    	
+    	@Override
+    	public int compareTo(Autocomplete o) {
+    		if (this.weight == o.weight) return 0; 
+    		else if (this.weight > o.weight) return -1;
+    		else if (this.weight < o.weight) return 1;
+    		return this.sentence.compareTo(o.sentence);
+    	}
+    	
+    	public Integer getWeight() {
+    		return weight;
+    	}
 
-	Integer weight = 0;
-	String sentence = "";
-	
-	public Autocomplete(Integer weight, String sentence) {
-		this.weight = weight;
-		this.sentence = sentence;
-	}
-	
-	@Override
-	public int compareTo(Autocomplete o) {
-		if (this.weight.equals(o.weight) && o.sentence.equals(o.sentence)) return 0; 
-		else if (this.weight > o.weight) return -1;
-		else if (this.weight < o.weight) return 1;
-		return this.sentence.compareTo(o.sentence);
-	}
-	
-	public Integer getWeight() {
-		return weight;
-	}
+    	public void setWeight(Integer weight) {
+    		this.weight = weight;
+    	}
 
-	public void setWeight(Integer weight) {
-		this.weight = weight;
-	}
+    	public String getSentence() {
+    		return sentence;
+    	}
 
-	public String getSentence() {
-		return sentence;
-	}
+    	public void setSentence(String sentence) {
+    		this.sentence = sentence;
+    	}
+    	
+    }
 
-	public void setSentence(String sentence) {
-		this.sentence = sentence;
-	}
-	
 }
