@@ -53,11 +53,16 @@ public class BinaryTree {
            /   \
           null null
          */
+        
+        tree.printPreorder();
+        
+        tree.printInorder();
+        
+        tree.printPostorder();
     }
     
 	/*
-	 * Given a binary tree, print its nodes according to the "bottom-up"
-	 * postorder traversal.
+	 * Given a binary tree, print its nodes in postorder traversal
 	 */
 	void printPostorder(Node node) {
 		if (node == null)
@@ -73,7 +78,9 @@ public class BinaryTree {
 		System.out.print(node.key + " ");
 	}
 
-	/* Given a binary tree, print its nodes in inorder */
+	/* 
+	 * Given a binary tree, print its nodes in inorder traversal
+	 */
 	void printInorder(Node node) {
 		if (node == null)
 			return;
@@ -88,7 +95,9 @@ public class BinaryTree {
 		printInorder(node.right);
 	}
 
-	/* Given a binary tree, print its nodes in preorder */
+	/* 
+	 * Given a binary tree, print its nodes in preorder traversal 
+	 */
 	void printPreorder(Node node) {
 		if (node == null)
 			return;
@@ -96,7 +105,7 @@ public class BinaryTree {
 		/* first print data of node */
 		System.out.print(node.key + " ");
 
-		/* then recur on left sutree */
+		/* then recur on left subtree */
 		printPreorder(node.left);
 
 		/* now recur on right subtree */
@@ -104,15 +113,22 @@ public class BinaryTree {
 	}
 	  
 	// Wrappers over above recursive functions
-	public void printPostorder() {
-		printPostorder(root);
-	}
-
-	public void printInorder() {
-		printInorder(root);
-	}
 
 	public void printPreorder() {
+		System.out.println("Preorder traversal:");
 		printPreorder(root);
+		System.out.println();
+	}
+	
+	public void printInorder() {
+		System.out.println("Inorder traversal:");
+		printInorder(root);
+		System.out.println();
+	}
+	
+	public void printPostorder() {
+		System.out.println("postorder traversal:");
+		printPostorder(root);
+		System.out.println();
 	}
 }
