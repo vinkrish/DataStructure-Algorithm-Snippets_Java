@@ -1,7 +1,7 @@
 package datastructure;
 
 /*
- * Implementation of search and insert operations on Trie
+ * https://www.geeksforgeeks.org/trie-insert-and-search/
  */
 public class Trie {
 	

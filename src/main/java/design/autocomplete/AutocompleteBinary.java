@@ -1,4 +1,4 @@
-package design;
+package design.autocomplete;
 
 import java.util.ArrayList;
 import java.util.Collections;
