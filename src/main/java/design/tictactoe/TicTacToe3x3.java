@@ -1,10 +1,10 @@
-package task;
+package design.tictactoe;
 
 import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class TicTacToe {
+public class TicTacToe3x3 {
 	static Scanner in;
 	static String[] board;
 	static String turn;
