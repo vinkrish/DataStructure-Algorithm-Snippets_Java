@@ -33,6 +33,7 @@
  * [Set](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/set)
  * [Shallow Copy](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/shallowcopy)
  * [Sorting](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/sorting)
+ * [Stack](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/stack)
  * [Synchronization](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/synchronization)
  * [Threading](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/threading)
  * [Task](https://github.com/vinkrish/DataStructure-Algorithm-Snippets_Java/tree/master/src/main/java/task)
