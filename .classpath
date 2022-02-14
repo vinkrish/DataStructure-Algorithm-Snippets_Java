@@ -25,18 +25,5 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="var" path="M2_REPO/org/projectlombok/lombok/1.18.20/lombok-1.18.20.jar" sourcepath="M2_REPO/org/projectlombok/lombok/1.18.20/lombok-1.18.20-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/commons-validator/commons-validator/1.7/commons-validator-1.7.jar" sourcepath="M2_REPO/commons-validator/commons-validator/1.7/commons-validator-1.7-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar" sourcepath="M2_REPO/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2.jar" sourcepath="M2_REPO/commons-logging/commons-logging/1.2/commons-logging-1.2-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar" sourcepath="M2_REPO/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/commons-digester/commons-digester/2.1/commons-digester-2.1.jar" sourcepath="M2_REPO/commons-digester/commons-digester/2.1/commons-digester-2.1-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar" sourcepath="M2_REPO/com/google/code/gson/gson/2.8.2/gson-2.8.2-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" sourcepath="M2_REPO/commons-lang/commons-lang/2.6/commons-lang-2.6-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.9.3/jackson-databind-2.9.3.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-databind/2.9.3/jackson-databind-2.9.3-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.9.3/jackson-core-2.9.3.jar" sourcepath="M2_REPO/com/fasterxml/jackson/core/jackson-core/2.9.3/jackson-core-2.9.3-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/assertj/assertj-core/3.10.0/assertj-core-3.10.0.jar" sourcepath="M2_REPO/org/assertj/assertj-core/3.10.0/assertj-core-3.10.0-sources.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
