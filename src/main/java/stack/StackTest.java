@@ -11,6 +11,7 @@ public class StackTest {
 		st.push(66);
 		st.push(99);
 		System.out.println("stack: " + st);
+		System.out.println("Stack Size: " + st.size());
 		st.pop();
 		st.pop();
 		System.out.println(st.peek());
@@ -18,8 +19,9 @@ public class StackTest {
 		try {
 			st.pop();
 		} catch (EmptyStackException e) {
-			System.out.println("empty stack");
+			System.out.println(e);
 		}
+		System.out.println("Is Stack empty: " + st.empty());
 	}
 
 }

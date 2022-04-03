@@ -11,30 +11,26 @@ public class TreeMapT {
 	}
 	
 	// This function prints frequencies of all elements
-    static void printFreq(int arr[])
-    {
-        // Creates an empty TreeMap
-        TreeMap<Integer, Integer> tmap =
-                     new TreeMap<Integer, Integer>();
+    static void printFreq(int arr[]) {
+        TreeMap<Integer, Integer> tmap = new TreeMap<>();
  
-        // Traverse through the given array
-        for (int i = 0; i < arr.length; i++)
-        {
+        for (int i = 0; i < arr.length; i++) {
             Integer c = tmap.get(arr[i]);
  
             // If this is first occurrence of element   
             if (tmap.get(arr[i]) == null)
                tmap.put(arr[i], 1);
- 
-            // If elements already exists in hash map
-            else
+            else // If elements already exists in hash map
               tmap.put(arr[i], ++c);
         }
  
-        // Print result
         for (Map.Entry<Integer, Integer> m:tmap.entrySet())
-          System.out.println("Frequency of " + m.getKey() + 
-                             " is " + m.getValue());
+        	System.out.println("Frequency of " + m.getKey() + " is " + m.getValue());
+        
+        // Other common methods
+        System.out.println(tmap.containsKey(7));
+        System.out.println(tmap.lowerKey(33));
+        System.out.println(tmap.higherKey(10));
     }
  
 

@@ -13,9 +13,7 @@ public class HashMapT {
 	// This function prints frequencies of all elements
     static void printFreq(int arr[])
     {
-        // Creates an empty HashMap
-        HashMap<Integer, Integer> hmap = 
-                     new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> hmap = new HashMap<Integer, Integer>();
  
         // Traverse through the given array
         for (int i = 0; i < arr.length; i++)
@@ -25,16 +23,13 @@ public class HashMapT {
             // If this is first occurrence of element 
             if (hmap.get(arr[i]) == null)
                hmap.put(arr[i], 1);
- 
-            // If elements already exists in hash map
-            else
+            else // If elements already exists in hash map
               hmap.put(arr[i], ++c);
         }
  
         // Print result
         for (Map.Entry<Integer, Integer> m:hmap.entrySet())
-          System.out.println("Frequency of " + m.getKey() + 
-                             " is " + m.getValue());
+          System.out.println("Frequency of " + m.getKey() + " is " + m.getValue());
     }
 
 }

@@ -1,6 +1,8 @@
 package map;
 
+import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class LinkedHashMapTest {
 
@@ -21,6 +23,23 @@ public class LinkedHashMapTest {
 				"Contains value 'practice.geeksforgeeks.org'? " + lhm.containsValue("practice.geeksforgeeks.org"));
 		System.out.println("delete element 'one': " + lhm.remove("one"));
 		System.out.println(lhm);
+		
+		Object key = lhm.keySet().iterator().next();
+		System.out.println(key);
+		
+		Iterator<String> iterator = lhm.keySet().iterator();
+		while(iterator.hasNext()) System.out.println(iterator.next());
+		
+		lhm.clear();
+		
+		LinkedHashMap<Integer, Integer> li_hash_map =  new LinkedHashMap<Integer, Integer>() {		
+			private static final long serialVersionUID = 1L;
+
+			protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
+	            return size() > 2; 
+	        } 
+	    };
+	
 	}
 
 }

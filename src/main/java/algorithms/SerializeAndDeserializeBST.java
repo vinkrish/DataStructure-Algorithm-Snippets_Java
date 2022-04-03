@@ -106,11 +106,15 @@ class SerializeAndDeserializeBST {
 		SerializeAndDeserializeBST tree = new SerializeAndDeserializeBST();
 		tree.root = new TreeNode(20);
 		tree.root.left = new TreeNode(8);
-		tree.root.right = new TreeNode(22);
-		tree.root.left.left = new TreeNode(4);
+		tree.root.right = new TreeNode(4);
+		tree.root.left.left = new TreeNode(22);
 		tree.root.left.right = new TreeNode(12);
 		tree.root.left.right.left = new TreeNode(10);
 		tree.root.left.right.right = new TreeNode(14);
+		
+		System.out.println("Inorder Traversal of the tree:");
+		inorder(tree.root);
+		System.out.println("\n");
 
 		String serialized = serialize(tree.root);
 //		String serialized = serializeWithPreorderTraversal(tree.root);
