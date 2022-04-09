@@ -89,7 +89,7 @@ public class JavassistsUnitTest {
         cf.addField(f);
 
         ClassPool classPool = ClassPool.getDefault();
-        Field[] fields = classPool.makeClass(cf).toClass().getFields();
+        Field[] fields = classPool.makeClass(cf).getClass().getFields();
         List<String> fieldsList = Stream.of(fields).map(Field::getName).collect(Collectors.toList());
         assertThat(fieldsList.contains("id"));
 

@@ -15,8 +15,7 @@ public class PersonL {
     Sex gender;
     String emailAddress;
   
-    PersonL(String nameArg, LocalDate birthdayArg,
-        Sex genderArg, String emailArg) {
+    PersonL(String nameArg, LocalDate birthdayArg, Sex genderArg, String emailArg) {
         name = nameArg;
         birthday = birthdayArg;
         gender = genderArg;
@@ -30,7 +29,7 @@ public class PersonL {
     }
 
     public void printPerson() {
-      System.out.println(name + ", " + this.getAge());
+      System.out.println(name + ", " + this.getAge() + ", " + this.getGender());
     }
     
     public Sex getGender() {

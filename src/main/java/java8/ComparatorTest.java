@@ -16,8 +16,7 @@ public class ComparatorTest {
         ar.add(new Student(121, "cccc", "jaipur"));
  
         System.out.println("Unsorted");
-        for (Student stud: ar)
-            System.out.println(stud);
+        for (Student stud: ar) System.out.println(stud);
  
         // Collections.sort(ar, new Sortbyroll());
         
@@ -28,8 +27,10 @@ public class ComparatorTest {
     	    }
     	});
         
-        
-        // Sorting using lambda expression
+        /*
+         * The first parameter is a List and second parameter is a lambda (function). 
+         * The lambda parameter is what makes Collections.sort() a higher order function
+         */
         
         Comparator<Student> comp = (s1, s2) -> {
         	return s1.rollno - s2.rollno;
@@ -41,8 +42,16 @@ public class ComparatorTest {
         Collections.sort(ar, (s1, s2) -> s1.rollno - s2.rollno);
  
         System.out.println("\nSorted by rollno");
-        for (Student stud: ar)
-            System.out.println(stud);
+        for (Student stud: ar) System.out.println(stud);
+        
+        /*
+         * Because the reversed() method returns a lambda (function), the reversed() method is considered a higher order function.
+         */
+        Comparator<Student> comparatorReversed = comp.reversed();
+        Collections.sort(ar, comparatorReversed);
+        
+        System.out.println("\nReverse Sorted by rollno");
+        for (Student stud: ar) System.out.println(stud);
  
         // Collections.sort(ar, new Sortbyname());
         
@@ -50,8 +59,7 @@ public class ComparatorTest {
         Collections.sort(ar, (s1, s2) -> s1.name.compareTo(s2.name));
  
         System.out.println("\nSorted by name");
-        for (Student stud: ar)
-            System.out.println(stud);
+        for (Student stud: ar) System.out.println(stud);
 
 	}
 	

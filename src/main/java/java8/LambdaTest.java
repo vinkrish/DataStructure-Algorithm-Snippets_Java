@@ -24,6 +24,8 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
+import java8.PersonL.Sex;
+
 public class LambdaTest {
 
     interface CheckPerson {
@@ -266,5 +268,16 @@ public class LambdaTest {
                     && p.getAge() <= 25)
             .map(p -> p.getEmailAddress())
             .forEach(email -> System.out.println(email));
+        
+        System.out.println();
+        
+        // UnaryOperator Interface is a functional interface that represents an operation which takes a single parameter and returns a parameter of the same type.
+
+        System.out.println("map is of UnaryOperator functional interface type:");
+
+        roster
+            .stream()
+            .map(p -> { p.gender = Sex.MALE; return p; })
+            .forEach(person -> person.printPerson());
      }
 }

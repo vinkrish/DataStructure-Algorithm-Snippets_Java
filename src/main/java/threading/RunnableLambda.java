@@ -13,6 +13,12 @@ public class RunnableLambda {
 
         System.out.println("Starting Thread...");
         thread.start();
+        
+        System.out.println("Creating Another Thread...");
+        Thread thread2 = new Thread(() -> System.out.println("Inside : " + Thread.currentThread().getName()));
+        
+        System.out.println("Starting Another Thread...");
+        thread2.start();
 	}
 
 }
