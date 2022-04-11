@@ -60,6 +60,16 @@ Java is a general-purpose programming language that is class-based, object-orien
 
 **Interfaces** : 100 % abstract superclass that defines the methods a subclass must support but not how they must be supported.
 
+## JRE
+
+The JRE is the Java Runtime Environment. It is a package of everything necessary to run a compiled Java program, including the Java Virtual Machine (JVM), the Java Class Library, the java command, and other infrastructure. However, it cannot be used to create new programs.
+
+## JDK
+
+The JDK is the Java Development Kit, the full-featured SDK for Java. It has everything the JRE has, but also the compiler (javac) and tools (like javadoc and jdb). It is capable of creating and compiling programs.
+
+![JDK-JRE](https://vinkrish-notes.s3.us-west-2.amazonaws.com/jdk-jre.png)
+
 ## Java identifiers
 
 1. Legal Identifiers - rules the compiler uses to determine whether a name is legal.
@@ -139,7 +149,6 @@ Interface variables must be public, static and final = constants.
 
 Interface methods:
 
-- must not be static.
 - can extend only Interface(many).
 - cannot implement another interface or class.
 
@@ -385,7 +394,7 @@ Priority Queue
 - Comparator provides compare() method to sort elements.
 - Comparator doesn't affect the original class, i.e., the actual class is not modified.
 
-## Developlment
+## Development
 
 ```
 javac [options] [source files]
@@ -395,6 +404,23 @@ java p[options] class [args]
 ## Maven 
 
 Tool used for building and managing any Java-based project.
+
+- `clean` This command cleans the maven project by deleting the target directory
+- `validate` This command validates the maven project that everything is correct and all the necessary information is available
+- `compile` This command compiles the java source classes of the maven project
+- `test` This command is used to run the test cases of the project using the maven-surefire-plugin
+- `package` This command builds the maven project and packages them into a JAR, WAR, etc
+- `verify` This command build the project, runs all the test cases and run any checks on the results of the integration tests to ensure quality criteria are met
+- `install` This command builds the maven project and installs the project files (JAR, WAR, pom.xml, etc) to the local repository
+- `deploy` This command is used to deploy the artifact to the remote repository
+
+```
+mvn --version (or) mvn -v
+mvn -help
+mvn clean package
+mvn clean verify -DskipTests //Compiles the tests, but skips running them
+mvn clean verify -Dmaven.test.skip=true //Skips compiling the tests and does not run them
+```
 
 ### groupId
 
@@ -419,3 +445,16 @@ eg: maven
 - Spring AOP may create chains of Advice for one single Join Point.
 - Pointcut is a predicate that matches Join Point.
 - An Advice is associated with a Pointcut expression and runs at any Join Point matching that Pointcut.
+
+## How Java evolves
+
+- JCP (Java Community Process) is the mechanism for developing standard technical specifications for Java technology.
+- JEP (Java Enhancement Proposal) is a document that is proposing an enhancement to Java core technology. These proposals are typically for enhancements that are not ready to be specified yet, JEPs may call for exploration of novel ideas.
+- JSR (Java Specification Request) is a document created as part of the JCP that is setting the scope for a team of people to develop a new specification.
+- JLS (Java Language Specification) specifies the syntax for the Java programming language and other rules that say what is or is not a valid Java program.
+
+### Relation between JEP, JSR and JLS:
+
+1. JEPs propose and develop experimental ideas to the point where they could be specified. Not all JEPs come to fruition.
+2. JSRs take mature ideas (e.g. resulting from a JEP), and produce a new specification, or modifications to an existing specification. Not all JSRs come to fruition.
+3. A specification is a common work product of a JSR. (Others include source code of interfaces, and reference implementations.) The JLS is an example of a specification. Others include the JVM specification, the Servlet and JSP specifications, the EJB specifications and so on.
