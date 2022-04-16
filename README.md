@@ -201,7 +201,7 @@ Reasons to use inheritance: To promote code reuse, To use polymorphism.
 
 code reuse - generic functionality (like method) don't have to be reimplemented, all subclasses are guaranteed to have capabilities of the superclass.
 
-**polymorphism** - treats any subclass of classA as classA, which allows you to write methods that don't need to change if new subclasses are created.
+**polymorphism** - treats any subclass of classA as classA, which allows you to write methods that don't need to change if new subclasses are created.  
 Runtime polymorphism doesn't happen when static
 
 **IS-A** : based on class inheritance and interface implementation, "this thing is a type of that thing".
@@ -437,6 +437,31 @@ eg: org.apache.maven.plugins
 It is the name of the jar without version.
 
 eg: maven
+
+## Spring
+
+Spring Framework provides the patterns and structure for java applications and in the process it handles the common things that developers need to do when they build java application.
+
+Types of objects:
+
+- Objects that hold data
+- Instances of classes with business logic methods
+
+How do you share object instances?  
+The singleton pattern
+
+Spring acts like a container for object instances by wrapping your application in a wrapper called Spring Application Context. Spring will initialize business objects and manage object instances (It can be singleton and multiple instances), it also connects these objects together just the way you wanted in your object graph picture.
+
+How it works:
+
+- Every class declares the dependencies it needs
+- Spring will inject those dependencies i.e every object has references to all the instances they require, this happens in a process called 'Dependency Injection'
+
+Spring Framework provides:
+
+- Application Context and Dependency Injection
+- Data Access
+- Spring MVC (let's you create web applications REST API using the same spring application model and dependency injection concepts)
 
 ## AOP
 
