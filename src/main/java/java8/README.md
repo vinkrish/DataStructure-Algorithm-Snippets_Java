@@ -12,6 +12,7 @@ Method reference is used to refer method of functional interface. It is compact 
 
 - Reference to a static method
 - Reference to an instance method of a particular object or arbitrary object
+- Reference to an instance method from class type
 - Reference to a constructor
 
 #### 1. Reference to a Static Method
@@ -20,14 +21,19 @@ You can refer to static method defined in the class. Following is the syntax and
 
 ```java
 ContainingClass::staticMethodName
+Math::max => Math.max(x,y)
 ```
 
 #### 2. Reference to an Instance Method
 
-like static methods, you can refer instance methods also
+a. Like static methods, you can refer instance methods also  
+b. Invoke the instance method on a reference to an object supplied by the context
 
 ```java
 containingObject::instanceMethodName  
+System.out::println => System.out.println(x)
+
+String::length => str.length()
 ```
 
 #### 3. Reference to a Constructor
@@ -36,6 +42,7 @@ You can refer a constructor by using the new keyword
 
 ```java
 ClassName::new
+ArrayList::new => ArrayList()
 ```
 
 ### Optional
@@ -55,4 +62,4 @@ Lambda expressions can only appear in places where they will be assigned to a va
 
 One issue with anonymous classes is that if the implementation of your anonymous class is very simple, such as an interface that contains only one method, then the syntax of anonymous classes may seem unwieldy and unclear. In these cases, you're usually trying to pass functionality as an argument to another method, such as what action should be taken when someone clicks a button. Lambda expressions enable you to do this, to treat functionality as method argument, or code as data.
 
-The previous section, Anonymous Classes, shows you how to implement a base class without giving it a name. Although this is often more concise than a named class, for classes with only one method, even an anonymous class seems a bit excessive and cumbersome. Lambda expressions let you express instances of single-method classes more compactly.
+Anonymous Classes, shows you how to implement a base class without giving it a name. Although this is often more concise than a named class, for classes with only one method, even an anonymous class seems a bit excessive and cumbersome. Lambda expressions let you express instances of single-method classes more compactly.

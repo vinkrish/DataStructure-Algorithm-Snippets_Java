@@ -9,8 +9,8 @@
   <packaging>pom</packaging>
   <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	<maven.compiler.source>11</maven.compiler.source>
-	<maven.compiler.target>11</maven.compiler.target>
+	<maven.compiler.source>17</maven.compiler.source>
+	<maven.compiler.target>17</maven.compiler.target>
     <assertj-core.version>3.10.0</assertj-core.version>
     <exec.mainClass>classes.Clonable</exec.mainClass>
     <skipTests>false</skipTests>
@@ -34,7 +34,7 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${maven-compiler-plugin.version}</version>
         <configuration>
-          <release>11</release>
+          <release>17</release>
           <annotationProcessorPaths>
 		    <path>
 			  <groupId>org.projectlombok</groupId>
