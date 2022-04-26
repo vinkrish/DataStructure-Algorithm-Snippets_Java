@@ -1,4 +1,4 @@
-package commontests;
+package sorting;
 
 /*
  * Merging one sorted array with unsorted array and resulting array should be sorted as well.

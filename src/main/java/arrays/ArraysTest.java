@@ -1,4 +1,4 @@
-package commontests;
+package arrays;
 
 import java.util.Arrays;
 import java.util.List;
@@ -87,6 +87,32 @@ public class ArraysTest {
 		Arrays.stream(intro).count();
 		long arrayStreamCount = Arrays.stream(intro, 0, 2).count(); // can provide inclusive and exclusive indices for the stream
 		System.out.println(arrayStreamCount);
+		System.out.println();
+		
+		// charArray
+		System.out.println("Char Array Sort:");
+		System.out.println(sort("Array"));
+		
+		System.out.println("Char Occurence: ");
+		alphabetsOccurence("array");
+	}
+	
+	public static void printArray(int[] array) {
+		for(int i: array) System.out.print(i);
+	}
+	
+	
+	public static String sort(String s) {
+		char[] t = s.toCharArray();
+		Arrays.sort(t);
+		return new String(t);
+	}
+	 
+	public static void alphabetsOccurence(String s) {
+		int[] sMap = new int[26];
+		for (int i = 0; i < s.length(); i++)
+            sMap[s.charAt(i) - 'a']++;
+		printArray(sMap);
 	}
 
 }

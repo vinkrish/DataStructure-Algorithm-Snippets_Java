@@ -1,4 +1,4 @@
-package commontests;
+package arrays;
 
 public class TwoDimenArray {
 	public static void main(String args[]) {
