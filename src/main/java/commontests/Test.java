@@ -1,9 +1,13 @@
 package commontests;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Deque;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 public class Test {
 
@@ -28,6 +32,7 @@ public class Test {
 		System.out.println(z);
 		
 		// ----------------------------------- //
+		System.out.println("Object reference:");
 		
 		List<String> list1 = new ArrayList<>();
 		list1.add("hi");
@@ -47,13 +52,19 @@ public class Test {
 		// breakOuterLoop();
 		
 		// Given getMeChange(MoneyGiven, ActualPrice);
+		System.out.println("Getting change:");
 		int[] changeReceived = getMeChange(10, 3.17);
         for(int change: changeReceived) System.out.print(change);
+        System.out.println();
 		
 		// Minimum no of filters required to cut pollution by half 
+        System.out.println("Number of filters:");
 		int[] pollution = new int[]{100, 30, 20}; // new int[]{10, 10}; // new int[]{7, 0};
 		System.out.println(numberOfFilters(pollution));
 		
+		System.out.println("Forming word:");
+		String[] words = {"U>N", "G>A", "R>Y", "H>U", "N>G", "A>R"};
+        System.out.println(findWord(words)); 
 	}
 	
 	public static int numUniqueEmails(String[] emails) {
@@ -130,5 +141,46 @@ public class Test {
 	    }
 	    return noOfFilters;
 	}
+
+    static String findWord(String [] words) { 
+        Deque<String> deque = new ArrayDeque<>();
+        Map<Integer, String> map = new HashMap<>();
+
+        String[] currentStrSplit = words[0].split(">");
+        deque.addFirst(currentStrSplit[0]);
+        deque.addLast(currentStrSplit[1]);
+        map.put(0, words[0]);
+
+        while(map.size() < words.length) {
+            for(int i=1; i<words.length; i++) {
+                String s = words[i];
+                currentStrSplit = s.split(">");
+    
+                if(!map.containsKey(i)){
+                    if(deque.getFirst().equals(currentStrSplit[0])) {
+                        String temp = deque.getFirst();
+                        deque.removeFirst();
+                        deque.addFirst(currentStrSplit[1]);
+                        deque.addFirst(temp);
+                        map.put(i, words[i]);
+                    } else if(deque.getLast().equals(currentStrSplit[0])) {
+                        deque.addLast(currentStrSplit[1]);
+                        map.put(i, words[i]);
+                    } else if(deque.getFirst().equals(currentStrSplit[1])) {
+                        deque.addFirst(currentStrSplit[0]);
+                        map.put(i, words[i]);
+                    } else if(deque.getLast().equals(currentStrSplit[1])) {
+                        String temp = deque.getLast();
+                        deque.removeLast();
+                        deque.addLast(currentStrSplit[0]);
+                        deque.addLast(temp);
+                        map.put(i, words[i]);
+                    }
+                }
+    
+            }
+        }
+        return deque.toString();
+    }
 
 }
