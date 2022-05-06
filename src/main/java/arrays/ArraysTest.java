@@ -1,6 +1,7 @@
 package arrays;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class ArraysTest {
@@ -24,6 +25,19 @@ public class ArraysTest {
 		Arrays.fill(stutter, "once");
 //		assertTrue(Stream.of(stutter).allMatch(el -> "once".equals(el));
 		
+		System.out.println("Array Fill:");
+		int[][] memo = new int[3][2];
+        for (int i = 0; i < 3; i++) {
+            Arrays.fill(memo[i], -1);
+        }
+		
+		for(int i=0; i<3; i++) {
+			for(int j=0; j<2; j++)
+				System.out.print(memo[i][j]);
+			System.out.println("");
+		}
+		System.out.println();
+       
 		/*
 		 * deepEquals ultimately calls itself each time it encounters an array
 		 * while equals will simply compare sub-arrays references
@@ -41,6 +55,22 @@ public class ArraysTest {
 		// Sort mutates the original reference, which is why we perform a copy here
 		String[] sorted = Arrays.copyOf(intro, 4);
 		Arrays.sort(sorted);
+		
+		System.out.println("Sorting Descending:");
+		int[] ints = new int[] {1, 2, 3};
+		/*
+		Arrays.sort(Integers, Collections.reverseOrder());
+		Collections.sort(list, Collections.reverseOrder());
+		Collections.sort(list, Collections.reverseOrder(new Comparator()));
+		*/
+		int[] intsDesc = Arrays.stream(ints)
+				.boxed()
+			    .sorted(Collections.reverseOrder())
+			    .mapToInt(Integer::intValue)
+			    .toArray();
+		printArray(intsDesc);
+//		System.out.println(Arrays.toString(intsDesc));
+		System.out.println();
 		
 		// binarySearch - if our array isn't first sorted, then binarySearch won't work as we expect!
 		System.out.println("Binary Search:");

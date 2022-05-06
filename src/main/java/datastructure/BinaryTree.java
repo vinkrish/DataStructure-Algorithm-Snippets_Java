@@ -53,6 +53,19 @@ public class BinaryTree {
            /   \
           null null
          */
+        tree.root.left.right = new Node(5);
+        /* 5 becomes right child of 2
+		        1
+		    /       \
+		   2          3
+		 /   \       /  \
+		4     5    null  null
+		/   \
+		null null
+		*/
+        
+        tree.root.right.left = new Node(6);
+        tree.root.right.right = new Node(7);
         
         tree.printPreorder();
         
