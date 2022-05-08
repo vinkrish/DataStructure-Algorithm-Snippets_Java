@@ -33,6 +33,7 @@ import java.lang.reflect.Modifier;
  */
 public class ReflectionTest {
 
+	@SuppressWarnings({ "rawtypes", "unchecked", "unused" })
 	public static void main(String[] args) throws Exception {
 		Class c = Class.forName("reflection.ReflectClass");
 		System.out.println("class name: " + c.getName());
@@ -55,6 +56,7 @@ public class ReflectionTest {
 		System.out.println("is class Public:" + Modifier.isPublic(modifiers));
 		
 		// --------------------------------Constructors------------------------------------
+		// Returns an array containing Constructor objects reflecting all the public constructors of the class represented by this Class object
 		
 		System.out.println();
 		Constructor[] constructors = c.getConstructors();
