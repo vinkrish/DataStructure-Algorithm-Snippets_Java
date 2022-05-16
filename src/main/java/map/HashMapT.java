@@ -1,7 +1,9 @@
 package map;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class HashMapT {
 
@@ -30,6 +32,23 @@ public class HashMapT {
         // Print result
         for (Map.Entry<Integer, Integer> m:hmap.entrySet())
           System.out.println("Frequency of " + m.getKey() + " is " + m.getValue());
+        
+        // Get all keys
+        Set<Integer> keys = hmap.keySet();
+        for (Integer k : keys) {
+            System.out.println("Key: " + k);
+        }
+
+        // Get all values
+        Collection<Integer> values = hmap.values();
+        for (Integer v : values) {
+            System.out.println("Value: " + v);
+        }
+
+        // Java 8
+        hmap.forEach((k, v) -> {
+            System.out.println("Key: " + k + ", Value: " + v);
+        });
     }
 
 }
