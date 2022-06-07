@@ -4,6 +4,8 @@ import java.util.*;
 
 /*
  * https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/
+ * 
+ * “Kruskal’s algorithm” is an algorithm to construct a “minimum spanning tree” of a “weighted undirected graph”.
  */
 public class KruskalGraph {
 

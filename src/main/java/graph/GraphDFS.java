@@ -10,43 +10,46 @@ public class GraphDFS {
 	private int V;   // No. of vertices
 	 
     // Array  of lists for Adjacency List Representation
-    private LinkedList<Integer> adj[];
+    private ArrayList<Integer> adj[];
  
     // Constructor
-    GraphDFS(int v)
-    {
+    GraphDFS(int v) {
         V = v;
-        adj = new LinkedList[v];
+        adj = new ArrayList[v];
         for (int i=0; i<v; ++i)
-            adj[i] = new LinkedList<>();
+            adj[i] = new ArrayList<>();
     }
  
     //Function to add an edge into the graph
-    void addEdge(int v, int w)
-    {
+    void addEdge(int v, int w) {
         adj[v].add(w);  // Add w to v's list.
     }
  
     // A function used by DFS
-    void DFSUtil(int v,boolean visited[])
-    {
+    void DFSUtil(int v,boolean visited[]) {
         // Mark the current node as visited and print it
         visited[v] = true;
         System.out.print(v+" ");
  
         // Recur for all the vertices adjacent to this vertex
+        /*
         Iterator<Integer> i = adj[v].listIterator();
-        while (i.hasNext())
-        {
+        while (i.hasNext()) {
             int n = i.next();
             if (!visited[n])
                 DFSUtil(n, visited);
         }
+        */
+        List<Integer> list = adj[v];
+        for(int item: list) {
+        	if (!visited[item])
+                DFSUtil(item, visited);
+        }
     }
  
     // The function to do DFS traversal. It uses recursive DFSUtil()
-    void DFS(int v)
-    {
+    void DFS(int v) {
+    	
         // Mark all the vertices as not visited(set as
         // false by default in java)
         boolean visited[] = new boolean[V];
@@ -55,8 +58,7 @@ public class GraphDFS {
         DFSUtil(v, visited);
     }
  
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
     	GraphDFS g = new GraphDFS(4);
  
         g.addEdge(0, 1);

@@ -8,28 +8,24 @@ import java.util.*;
 public class GraphBFS {
 
 	private int V;   // No. of vertices
-    private LinkedList<Integer> adj[]; //Adjacency Lists
+    private ArrayList<Integer> adj[]; //Adjacency Lists
  
     // Constructor
-    GraphBFS(int v)
-    {
+    GraphBFS(int v) {
         V = v;
-        adj = new LinkedList[v];
+        adj = new ArrayList[v];
         for (int i=0; i<v; ++i)
-            adj[i] = new LinkedList();
+            adj[i] = new ArrayList();
     }
  
     // Function to add an edge into the graph
-    void addEdge(int v,int w)
-    {
+    void addEdge(int v,int w) {
         adj[v].add(w);
     }
  
     // prints BFS traversal from a given source s
-    void BFS(int s)
-    {
-        // Mark all the vertices as not visited(By default
-        // set as false)
+    void BFS(int s) {
+        // Mark all the vertices as not visited(By default set as false)
         boolean visited[] = new boolean[V];
  
         // Create a queue for BFS
@@ -39,31 +35,36 @@ public class GraphBFS {
         visited[s]=true;
         queue.add(s);
  
-        while (queue.size() != 0)
-        {
+        while (queue.size() != 0) {
+        	
             // Dequeue a vertex from queue and print it
             s = queue.poll();
             System.out.print(s+" ");
  
             // Get all adjacent vertices of the dequeued vertex s
-            // If a adjacent has not been visited, then mark it
-            // visited and enqueue it
+            // If a adjacent has not been visited, then mark it visited and enqueue it
+            /*
             Iterator<Integer> i = adj[s].listIterator();
-            while (i.hasNext())
-            {
+            while (i.hasNext()) {
                 int n = i.next();
-                if (!visited[n])
-                {
+                if (!visited[n]) {
                     visited[n] = true;
                     queue.add(n);
+                }
+            }
+            */
+            List<Integer> list = adj[s];
+            for(int item: list) {
+            	if (!visited[item]) {
+                    visited[item] = true;
+                    queue.add(item);
                 }
             }
         }
     }
  
     // Driver method to
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
     	GraphBFS g = new GraphBFS(4);
  
         g.addEdge(0, 1);
