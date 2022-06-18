@@ -179,6 +179,12 @@ public class LambdaTest {
         System.out.println();
 
         // Approach 5: Specify Search Criteria Code with a Lambda Expression
+        
+        CheckPerson cp = (person) -> { 
+        	return person.getGender() == PersonL.Sex.MALE && person.getAge() >= 18 && person.getAge() <= 25;
+        };
+        CheckPerson cp2 = p -> p.getGender() == PersonL.Sex.MALE && p.getAge() >= 18 && p.getAge() <= 25;
+        printPersons(roster, cp);
 
         System.out.println("Persons who are eligible for Selective Service " +
             "(lambda expression):");
@@ -281,3 +287,10 @@ public class LambdaTest {
             .forEach(person -> person.printPerson());
      }
 }
+
+/*
+	Lambda expressions were introduced as a way to simplify functional programming 
+	by allowing you to write concise blocks of code that can be passed as arguments to methods. 
+	
+	Lambda expressions allow you to write implementations of functional interfaces (interfaces with a single abstract method) using the -> symbol.
+ * */

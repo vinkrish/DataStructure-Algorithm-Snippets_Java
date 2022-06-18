@@ -6,6 +6,8 @@
 
 ### Method References
 
+A method reference provides a way to refer to a method of an existing class or instance in a concise manner. Instead of writing a full lambda expression, method references allow you to reuse an existing method and pass it directly as an argument where a functional interface is expected. The method reference can be used in contexts where a lambda expression would be used.
+
 Method reference is used to refer method of functional interface. It is compact and easy form of lambda expression. Each time when you are using lambda expression to just referring a method, you can replace your lambda expression with method reference.
 
 #### Types of Method References
@@ -34,6 +36,9 @@ containingObject::instanceMethodName
 System.out::println => System.out.println(x)
 
 String::length => str.length()
+
+// Reference to an instance method of an arbitrary object of a particular type:
+String::toUpperCase
 ```
 
 #### 3. Reference to a Constructor
@@ -44,6 +49,20 @@ You can refer a constructor by using the new keyword
 ClassName::new
 ArrayList::new => ArrayList()
 ```
+
+### Lambda Expressions
+
+Lambda expressions can only appear in places where they will be assigned to a variable whose type is a functional interface.
+
+Syntax:
+
+```java
+(parameters) -> {expression or code block}
+```
+
+One issue with anonymous classes is that if the implementation of your anonymous class is very simple, such as an interface that contains only one method, then the syntax of anonymous classes may seem unwieldy and unclear. In these cases, you're usually trying to pass functionality as an argument to another method, such as what action should be taken when someone clicks a button. Lambda expressions enable you to do this, to treat functionality as method argument, or code as data.
+
+Anonymous Classes, shows you how to implement a base class without giving it a name. Although this is often more concise than a named class, for classes with only one method, even an anonymous class seems a bit excessive and cumbersome. Lambda expressions let you express instances of single-method classes more compactly.
 
 ### Optional
 
@@ -56,10 +75,16 @@ Advantages of Java 8 Optional:
 - We can develop clean and neat APIs.
 - No more Boiler plate code
 
-### Lambda Expressions
+### Streams
 
-Lambda expressions can only appear in places where they will be assigned to a variable whose type is a functional interface.
+1. The main difference between intermediate and terminal operations is that intermediate operations return a stream as a result and terminal operations return non-stream values like primitive or object or collection or may not return anything.
 
-One issue with anonymous classes is that if the implementation of your anonymous class is very simple, such as an interface that contains only one method, then the syntax of anonymous classes may seem unwieldy and unclear. In these cases, you're usually trying to pass functionality as an argument to another method, such as what action should be taken when someone clicks a button. Lambda expressions enable you to do this, to treat functionality as method argument, or code as data.
+2. As intermediate operations return another stream as a result, they can be chained together to form a pipeline of operations. Terminal operations cannot be chained together.
 
-Anonymous Classes, shows you how to implement a base class without giving it a name. Although this is often more concise than a named class, for classes with only one method, even an anonymous class seems a bit excessive and cumbersome. Lambda expressions let you express instances of single-method classes more compactly.
+3. Pipeline of operations may contain any number of intermediate operations, but there has to be only one terminal operation, that too at the end of pipeline.
+
+4. Intermediate operations are lazily loaded. When you call intermediate operations, they are actually not executed. They are just stored in the memory and executed when the terminal operation is called on the stream.
+
+5. As the names suggest, intermediate operations doesn’t give end result. They just transform one stream to another stream. On the other hand, terminal operations give end result.
+
+![Streams](https://vinkrish-notes.s3.us-west-2.amazonaws.com/streams.jpeg)

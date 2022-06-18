@@ -43,5 +43,8 @@ public class DefaultMethods {
 			};
 		});
 	}
-
 }
+
+/*
+ * Default methods allow interfaces to provide default implementations for methods that implementing classes can override if needed.
+ */

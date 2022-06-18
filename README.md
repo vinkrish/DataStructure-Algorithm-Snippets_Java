@@ -201,7 +201,7 @@ Reasons to use inheritance: To promote code reuse, To use polymorphism.
 
 code reuse - generic functionality (like method) don't have to be reimplemented, all subclasses are guaranteed to have capabilities of the superclass.
 
-**polymorphism** - treats any subclass of classA as classA, which allows you to write methods that don't need to change if new subclasses are created.  
+**polymorphism** - treats any subclass of classA as classA, which allows you to write methods that don't need to change if new subclasses are created. Java uses dynamic method dispatch to call the appropriate method based on the actual object's type at runtime, not the reference type.  
 Runtime polymorphism doesn't happen when static
 
 **IS-A** : based on class inheritance and interface implementation, "this thing is a type of that thing".
