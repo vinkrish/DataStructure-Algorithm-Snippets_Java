@@ -1,6 +1,10 @@
 package java8;
 
+import java.util.function.Function;
+
 public class Functionalnterface {
+
+	Function<String, Integer> fi;
 
 	public static void main(String[] args) {
 		Converter<String, Integer> converter = (from) -> Integer.valueOf(from);
@@ -17,6 +21,14 @@ public class Functionalnterface {
 		TestInterface tester = () -> System.out.println("Java SE 8 is working!");
 		tester.test();
 		
+	}
+
+	public void setFi(Function<String, Integer> fi){
+		this.fi = fi;
+	}
+
+	public void checkFi(String str) {
+		System.out.println(this.fi.apply(str));
 	}
 	
 	@FunctionalInterface
