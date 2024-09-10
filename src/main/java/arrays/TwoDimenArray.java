@@ -1,5 +1,7 @@
 package arrays;
 
+import java.util.Arrays;
+
 public class TwoDimenArray {
 	public static void main(String args[]) {
         int arr[][] = new int[4][];
@@ -22,5 +24,7 @@ public class TwoDimenArray {
             }
             System.out.println();
         }
+        // another way to print 2-dimensional array
+        System.out.println(Arrays.deepToString(arr));
     }
 }

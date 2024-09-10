@@ -10,6 +10,7 @@ public class ArraysTest {
 		System.out.println("copyOfRange:");
 		String[] intro = new String[] { "once", "upon", "a", "time" };
 		String[] abridgement = Arrays.copyOfRange(intro, 0, 3);
+		System.out.println(Arrays.toString(abridgement));
 		System.out.println(Arrays.equals(intro, abridgement));
 		System.out.println();
 		
@@ -50,6 +51,10 @@ public class ArraysTest {
 				  { intro, new String[] { "chapter one", "chapter two" }, end };
 		System.out.println(Arrays.deepEquals(story, copy));
 		System.out.println(Arrays.equals(story, copy));
+		
+		// toString
+		System.out.println(Arrays.toString(intro));
+		System.out.println(Arrays.deepToString(story));
 		System.out.println();
 		
 		// Sort mutates the original reference, which is why we perform a copy here
@@ -88,22 +93,42 @@ public class ArraysTest {
 		Object[] looping = new Object[]{ intro, intro }; 
 		int hashBefore = Arrays.hashCode(looping);
 		int deepHashBefore = Arrays.deepHashCode(looping);
+		System.out.println(Arrays.deepToString(looping));
 		intro[3] = null;
+		System.out.println(Arrays.deepToString(looping));
 		int hashAfter = Arrays.hashCode(looping);
 		int deepHashAfter = Arrays.deepHashCode(looping);
 		System.out.println(hashBefore == hashAfter);
 		System.out.println(deepHashBefore == deepHashAfter);
 		System.out.println();
 		
+		System.out.println("looping is not technically 2d array");
+		String[][] looping2D = new String[][] { 
+		    { "once", "upon", "a", "time" }, 
+		    { "once", "upon", "a", "time" } 
+		};
+		System.out.println(Arrays.deepToString(looping2D));
+		System.out.println();
+		
+		System.out.println("List created from array is not not mutable");
 		/*
 		 * the returned List will be a fixed length so we won't be able to add or remove elements
 		 * java.util.Arrays has its own ArrayList subclass, which asList returns
 		 */
 		List<String> rets = Arrays.asList(intro);
+		try {
+			System.out.println(rets);
+			rets.add("new");
+		} catch(Exception e) {
+			System.out.println(e);
+		}
+		System.out.println();
 		
-		// toString
-		System.out.println(Arrays.toString(intro));
-		System.out.println(Arrays.deepToString(story));
+		System.out.println("One way to make array grow is to create new:");
+		String[] newArray = new String[intro.length + 1];
+        System.arraycopy(intro, 0, newArray, 0, intro.length);
+        newArray[newArray.length - 1] = "story";
+        System.out.println(Arrays.toString(newArray));
 		System.out.println();
 		
 		System.out.println("setAll:");
