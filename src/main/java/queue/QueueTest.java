@@ -11,6 +11,9 @@ public class QueueTest {
 	    // Adds elements {0, 1, 2, 3, 4} to queue
 	    for (int i=0; i<5; i++)
 	     q.add(i);
+	    
+	    // returns false for capacity-bound queues
+	    q.offer(6);
 	 
 	    // Display contents of the queue.
 	    System.out.println("Elements of queue:"+q);
@@ -18,6 +21,9 @@ public class QueueTest {
 	    // To remove the head of queue.
 	    int removedele = q.remove();
 	    System.out.println("removed element:" + removedele);
+	    
+	    // If queue is empty, it returns null instead of throwing an exception
+	    System.out.println("Poll: " + q.poll()); 
 	 
 	    System.out.println(q);
 	 

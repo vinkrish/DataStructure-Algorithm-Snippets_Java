@@ -1,5 +1,10 @@
 package datastructure;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class BinaryTree {
 	// Root of Binary Tree
     public Node root;
@@ -72,6 +77,10 @@ public class BinaryTree {
         tree.printInorder();
         
         tree.printPostorder();
+        
+        System.out.println("Tree Level Order Traversal:");
+        List<List<Integer>> result = tree.levelOrder(tree.root);
+        System.out.println(result);
     }
     
 	/*
@@ -143,5 +152,29 @@ public class BinaryTree {
 		System.out.println("postorder traversal:");
 		printPostorder(root);
 		System.out.println();
+	}
+	
+	public List<List<Integer>> levelOrder(Node root) {
+		List<List<Integer>> result = new ArrayList<>();
+        if (root == null) return result;
+
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size();
+            System.out.println("LevelSize: " + levelSize);
+            List<Integer> currentLevel = new ArrayList<Integer>();
+
+            for (int i = 0; i < levelSize; i++) {
+                Node currentNode = queue.poll();
+                currentLevel.add(currentNode.key);
+
+                if (currentNode.left != null) queue.offer(currentNode.left);
+                if (currentNode.right != null) queue.offer(currentNode.right);
+            }
+            result.add(currentLevel);
+        }
+        return result;
 	}
 }

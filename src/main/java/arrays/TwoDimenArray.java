@@ -26,5 +26,16 @@ public class TwoDimenArray {
         }
         // another way to print 2-dimensional array
         System.out.println(Arrays.deepToString(arr));
+        
+        int[][] directions = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        int rows = directions.length;
+        int cols = directions[0].length;
+        System.out.println(rows);
+        System.out.println(cols);
+        for (int[] d : directions) {
+        	for(Integer ints: d) {
+        		System.out.println(ints);
+        	}
+        }
     }
 }
