@@ -13,7 +13,7 @@ public class QueueTest {
 	     q.add(i);
 	    
 	    // returns false for capacity-bound queues
-	    q.offer(6);
+	    q.offer(5);
 	 
 	    // Display contents of the queue.
 	    System.out.println("Elements of queue:"+q);

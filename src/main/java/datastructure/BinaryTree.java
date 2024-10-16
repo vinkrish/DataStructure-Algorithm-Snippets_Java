@@ -84,7 +84,8 @@ public class BinaryTree {
     }
     
 	/*
-	 * Given a binary tree, print its nodes in postorder traversal
+	 * Given a binary tree, print its nodes in postorder traversal (Left recursively, Right recursively, Root)
+	 * Best suited for Used for Deleting a tree
 	 */
 	void printPostorder(Node node) {
 		if (node == null)
@@ -101,7 +102,8 @@ public class BinaryTree {
 	}
 
 	/* 
-	 * Given a binary tree, print its nodes in inorder traversal
+	 * Given a binary tree, print its nodes in inorder traversal (Left recursively, Root, Right recursively)
+	 * Best suited for retrieving nodes of a binary search tree (BST) in sorted order
 	 */
 	void printInorder(Node node) {
 		if (node == null)
@@ -118,7 +120,8 @@ public class BinaryTree {
 	}
 
 	/* 
-	 * Given a binary tree, print its nodes in preorder traversal 
+	 * Given a binary tree, print its nodes in preorder traversal (Root, Left recursively, Right recursively)
+	 * Best suited for creating a copy of the tree
 	 */
 	void printPreorder(Node node) {
 		if (node == null)
