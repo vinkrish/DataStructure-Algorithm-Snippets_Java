@@ -3,6 +3,7 @@ package arrays;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class ArraysTest {
 
@@ -150,6 +151,20 @@ public class ArraysTest {
 		
 		System.out.println("Char Occurence: ");
 		alphabetsOccurence("array");
+		System.out.println();
+		
+		List<String> list = List.of("A", "B", "C");
+		String[] array = list.toArray(new String[0]); // Convert List to String array
+		System.out.println(Arrays.toString(array));
+		
+		int[] arrayStream = {1, 2, 3};
+		IntStream intStream = Arrays.stream(arrayStream); // Stream for array operations
+		intStream.forEach(System.out::println); // Prints each element on a new line
+		
+//		IntStream intStream = IntStream.of(1, 2, 3, 4, 5);
+//		int[] array = intStream.toArray();
+		
+
 	}
 	
 	public static void printArray(int[] array) {

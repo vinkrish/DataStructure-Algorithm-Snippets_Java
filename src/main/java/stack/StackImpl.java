@@ -1,4 +1,4 @@
-package datastructure;
+package stack;
 
 public class StackImpl {
 

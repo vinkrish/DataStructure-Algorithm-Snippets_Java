@@ -7,15 +7,15 @@ public class Filter {
 
 	public static void main(String[] args) {
 		List<Person> persons = Arrays.asList(
-                new Person("Vinay", 30),
-                new Person("Krishna", 31),
-                new Person("Angel", 22),
-                new Person("Krishna", 1)
+                new Person("Vinay", 35),
+                new Person("Krishna", 25),
+                new Person("Angel", 26),
+                new Person("Dupee", 16)
         );
 
 		// passing predicate to filter
         Person result1 = persons.stream()
-                .filter((p) -> "Krishna".equals(p.getName()) && 31 == p.getAge())
+                .filter((p) -> "Vinay".equals(p.getName()) && p.getAge() > 25)
                 .findAny()
                 .orElse(null);
 
@@ -24,7 +24,7 @@ public class Filter {
         //or like this
         Person result2 = persons.stream()
                 .filter(p -> {
-                    if ("Krishna".equals(p.getName()) && 31 == p.getAge()) {
+                    if ("Angel".equals(p.getName()) && p.getAge() > 16) {
                         return true;
                     }
                     return false;
@@ -32,6 +32,8 @@ public class Filter {
                 .orElse(null);
 
         System.out.println("result 2 :" + result2);
+        
+        persons.stream().filter(p -> p.getAge() > 25).forEach(p -> System.out.println(p.getName()));
 
 	}
 

@@ -6,10 +6,10 @@ import lombok.Setter;
 
 public class GettersSetters {
 	/**
-	 * Age of the person. Water is wet.
+	 * Age of the person.
 	 * 
-	 * @param age New value for this person's age. Sky is blue.
-	 * @return The current value of this person's age. Circles are round.
+	 * @param age New value for this person's age.
+	 * @return The current value of this person's age.
 	 */
 	@Getter
 	@Setter

@@ -13,8 +13,8 @@ Method reference is used to refer method of functional interface. It is compact 
 #### Types of Method References
 
 - Reference to a static method
-- Reference to an instance method of a particular object or arbitrary object
-- Reference to an instance method from class type
+- Reference to an Instance Method of a Particular Object
+- Reference to an Instance Method of an Arbitrary Object of a Particular Type
 - Reference to a constructor
 
 #### 1. Reference to a Static Method
@@ -26,7 +26,7 @@ ContainingClass::staticMethodName
 Math::max => Math.max(x,y)
 ```
 
-#### 2. Reference to an Instance Method
+#### 2. Instance Methods of a Specific Object
 
 a. Like static methods, you can refer instance methods also  
 b. Invoke the instance method on a reference to an object supplied by the context
@@ -35,19 +35,33 @@ b. Invoke the instance method on a reference to an object supplied by the contex
 containingObject::instanceMethodName  
 System.out::println => System.out.println(x)
 
-String::length => str.length()
-
-// Reference to an instance method of an arbitrary object of a particular type:
-String::toUpperCase
+PrintStream ps = System.out;
+Consumer<String> printer = ps::println;
+printer.accept("Hello, World!"); // Prints: Hello, World!
 ```
 
-#### 3. Reference to a Constructor
+#### 3. Instance Methods of an Arbitrary Object of a Particular Type
+
+```java
+Function<String, Integer> stringLength = String::length;
+int length = stringLength.apply("Hello");
+System.out.println(length);
+
+String::length => str.length()
+String::toUpperCase => str.toUpperCase()
+
+```
+
+#### 4. Reference to a Constructor
 
 You can refer a constructor by using the new keyword
 
 ```java
 ClassName::new
 ArrayList::new => ArrayList()
+
+Supplier<List<String>> listSupplier = ArrayList::new;
+List<String> list = listSupplier.get();
 ```
 
 ### Lambda Expressions

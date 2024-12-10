@@ -15,7 +15,17 @@ public class VarArgs {
 		display();//zero argument
 		
 		display("my","name","is","varargs");//four arguments  
+		
+		printArray(1, 2, 3, 4);                 // Output: 1 2 3 4
+	    printArray("A", "B", "C");              // Output: A B C
+	    printArray(1.5, 2.7, 3.9);              // Output: 1.5 2.7 3.9
 
+	}
+	
+	public static <T> void printArray(T... elements) {
+	    for (T element : elements) {
+	        System.out.println(element);
+	    }
 	}
 
 }

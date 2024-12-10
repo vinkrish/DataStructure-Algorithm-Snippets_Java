@@ -3,6 +3,7 @@ package java8;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 /*
  * The intent of Java when releasing Optional was to use it as a return type
@@ -10,8 +11,15 @@ import java.util.Optional;
 public class OptionalTest {
 
 	public static void main(String[] args) {
-		// Creating Optional Objects
 		
+		Optional<String> result = Stream.of("apple", "banana").filter(s -> s.startsWith("z")).findFirst();
+		// Functional handling
+		result.ifPresent(System.out::println); // Does nothing if absent
+		String value = result.orElse("No match found");
+		System.out.println(value); // Outputs: No match found
+
+		
+		// Creating Optional Objects
 		Optional<String> opt = Optional.empty();
 		boolean bool = opt.isPresent();
 		System.out.println(bool);

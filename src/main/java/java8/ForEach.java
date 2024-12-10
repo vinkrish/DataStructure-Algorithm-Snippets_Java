@@ -4,10 +4,13 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class ForEach {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
+		Stream.of("a", "b", "c").parallel().forEachOrdered(System.out::println);
+
 		// Normal way to loop a map
 		Map<String, Integer> items = new HashMap<>();
 		items.put("A", 10);
@@ -31,6 +34,10 @@ public class ForEach {
 				System.out.println("Hello E");
 			}
 		});
+		
+		items.entrySet().stream() 
+		   .filter(entry -> entry.getValue() > 30) 
+		   .forEach(entry -> System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue()));
 		
 		// Normal way to loop a list
 		List<String> listItems = Arrays.asList("A", "B", "C", "D", "E");

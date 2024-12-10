@@ -52,5 +52,7 @@ class MaxHeapPQ {
         System.out.println("Value in array: "); 
         for (int i = 0; i < arr.length; i++) 
             System.out.println("Value: " + arr[i].toString()); 
+        
+        System.out.println("minHeap: " + pQueue.toString());
     } 
 }

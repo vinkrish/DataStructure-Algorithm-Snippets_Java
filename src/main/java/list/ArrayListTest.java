@@ -8,6 +8,11 @@ import java.util.ListIterator;
 public class ArrayListTest {
 
 	public static void main(String[] args) {
+		
+		String[] arrayList = {"A", "B", "C"};
+		List<String> fixedList = Arrays.asList(arrayList); // Fixed-size list
+		List<String> resizableList = new ArrayList<>(Arrays.asList(arrayList)); // Resizable list
+
 		// size of ArrayList
         int n = 5;
  

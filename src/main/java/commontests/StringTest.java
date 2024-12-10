@@ -66,6 +66,19 @@ public class StringTest {
 		for (char c : s.toCharArray()) {
 			System.out.println(c);
 		}
+		
+		String charString = "Hello World!";
+        for (int i = 0; i < charString.length(); i++) {
+            char c = charString.charAt(i);
+            
+            if (Character.isLowerCase(c)) {
+                System.out.println(c + " is a lowercase letter.");
+            } else if (Character.isUpperCase(c)) {
+                System.out.println(c + " is an uppercase letter.");
+            } else {
+                System.out.println(c + " is not a letter.");
+            }
+        }
 	}
 
 }
